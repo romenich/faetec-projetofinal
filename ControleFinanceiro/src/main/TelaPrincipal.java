@@ -17,6 +17,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        int screenWidth = 865;
+        int screenHeight = 516;
         
         
         // adicionar o JPanel
@@ -60,16 +62,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         patrimonioLIQUIDOTXT = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         informativoLABEL.setText("Insira os dados abaixo para calcular o Balanço Patrimonial da Empresa:");
-        getContentPane().add(informativoLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 0, -1, -1));
 
         jLabel1.setText("Ativos");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 20, -1, -1));
 
         jLabel2.setText("Passivos");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 20, -1, -1));
 
         painelLINHA.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -81,64 +79,185 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         painelLINHALayout.setVerticalGroup(
             painelLINHALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 179, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        getContentPane().add(painelLINHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 20, -1, -1));
-
         circulanteATV.setText("Circulante");
-        getContentPane().add(circulanteATV, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         nomecontaATVLABEL.setText("Nome:");
-        getContentPane().add(nomecontaATVLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 79, -1, -1));
 
         nomeCONTATXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomeCONTATXTActionPerformed(evt);
             }
         });
-        getContentPane().add(nomeCONTATXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 99, 100, -1));
-        getContentPane().add(opcaoUMATVBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 56, -1, -1));
 
         naocirculanteATV.setText("Não Circulante");
-        getContentPane().add(naocirculanteATV, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 40, -1, -1));
-        getContentPane().add(opcaoDOISATVBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 56, -1, -1));
 
         valorcontaATVLABEL.setText("Valor:");
-        getContentPane().add(valorcontaATVLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 137, -1, -1));
-        getContentPane().add(valorcontaTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 157, 100, -1));
 
         circulantePASS.setText("Circulante");
-        getContentPane().add(circulantePASS, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 41, -1, -1));
 
         naocirculantePASS.setText("Não Circulante");
-        getContentPane().add(naocirculantePASS, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 41, -1, -1));
-        getContentPane().add(opcaoUMPASSBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 57, -1, -1));
-        getContentPane().add(opcaoDOISPASSBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 57, -1, -1));
 
         nomecontaPASSLABEL.setText("Nome:");
-        getContentPane().add(nomecontaPASSLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 85, -1, -1));
-        getContentPane().add(nomecontaPASSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 105, 100, -1));
 
         valorcontaPASSLABEL.setText("Valor:");
-        getContentPane().add(valorcontaPASSLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 136, -1, -1));
-        getContentPane().add(valorcontaPASSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 156, 100, -1));
 
         jButton1.setText("+");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 176, -1, -1));
 
         jButton2.setText("+");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 176, -1, -1));
 
         patrimonioLABEL1.setText("Patrimônio Liquído: ");
-        getContentPane().add(patrimonioLABEL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
 
         patrimonioLIQUIDOTXT.setEditable(false);
         patrimonioLIQUIDOTXT.setColumns(20);
         patrimonioLIQUIDOTXT.setRows(5);
         jScrollPane1.setViewportView(patrimonioLIQUIDOTXT);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(circulanteATV)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(nomecontaATVLABEL)
+                                .addComponent(opcaoUMATVBTN))
+                            .addComponent(valorcontaATVLABEL))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(naocirculanteATV)
+                                .addGap(42, 42, 42))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(opcaoDOISATVBTN)
+                                .addGap(64, 64, 64))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nomeCONTATXT, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(valorcontaTXT))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(painelLINHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(circulantePASS)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(opcaoDOISPASSBTN)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(nomecontaPASSLABEL)
+                                        .addComponent(valorcontaPASSLABEL)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nomecontaPASSTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                    .addComponent(valorcontaPASSTXT))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(83, 83, 83)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(naocirculantePASS)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(opcaoUMPASSBTN))
+                        .addGap(29, 29, 29))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(jButton2)
+                        .addGap(312, 312, 312)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(patrimonioLABEL1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(informativoLABEL)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(informativoLABEL)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(naocirculantePASS)
+                                            .addComponent(circulantePASS))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(opcaoDOISPASSBTN)
+                                                .addGap(23, 23, 23)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(nomecontaPASSLABEL)
+                                                    .addComponent(nomecontaPASSTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(opcaoUMPASSBTN))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(valorcontaPASSLABEL)
+                                            .addComponent(valorcontaPASSTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(jLabel2))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(naocirculanteATV)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(opcaoDOISATVBTN))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(circulanteATV)
+                                        .addGap(7, 7, 7)
+                                        .addComponent(opcaoUMATVBTN)
+                                        .addGap(60, 60, 60)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(nomeCONTATXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nomecontaATVLABEL))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                                .addComponent(jButton1)
+                                .addGap(20, 20, 20))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(valorcontaATVLABEL)
+                                    .addComponent(valorcontaTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(76, 76, 76)))
+                        .addComponent(patrimonioLABEL1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(painelLINHA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)))
+                .addGap(72, 72, 72))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

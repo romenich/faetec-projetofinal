@@ -16,6 +16,9 @@ public class TelaInicio extends javax.swing.JFrame {
      */
     public TelaInicio() {
         initComponents();
+        int screenWidth = 865;
+        int screenHeight = 516;
+       
     }
 
     /**
@@ -26,6 +29,7 @@ public class TelaInicio extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         apresentacaoLABEL = new javax.swing.JLabel();
         cadastroBTN = new javax.swing.JButton();
@@ -36,9 +40,17 @@ public class TelaInicio extends javax.swing.JFrame {
         setTitle("Gerador de BP");
         setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         setForeground(java.awt.Color.darkGray);
+        setResizable(false);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         apresentacaoLABEL.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         apresentacaoLABEL.setText("Gerador BP Empresas");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 52, 0, 0);
+        getContentPane().add(apresentacaoLABEL, gridBagConstraints);
 
         cadastroBTN.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         cadastroBTN.setText("Cadastrar Empresa");
@@ -47,6 +59,12 @@ public class TelaInicio extends javax.swing.JFrame {
                 cadastroBTNActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(195, 81, 0, 0);
+        getContentPane().add(cadastroBTN, gridBagConstraints);
 
         entrarBTN.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         entrarBTN.setText("Entrar");
@@ -55,6 +73,12 @@ public class TelaInicio extends javax.swing.JFrame {
                 entrarBTNActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(195, 165, 0, 116);
+        getContentPane().add(entrarBTN, gridBagConstraints);
 
         sobreBTN.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         sobreBTN.setText("Sobre");
@@ -63,37 +87,12 @@ public class TelaInicio extends javax.swing.JFrame {
                 sobreBTNActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(apresentacaoLABEL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(cadastroBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(entrarBTN)
-                .addGap(60, 60, 60))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(sobreBTN)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(apresentacaoLABEL)
-                .addGap(88, 88, 88)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cadastroBTN)
-                    .addComponent(entrarBTN))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
-                .addComponent(sobreBTN))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(254, 0, 0, 0);
+        getContentPane().add(sobreBTN, gridBagConstraints);
 
         pack();
         setLocationRelativeTo(null);

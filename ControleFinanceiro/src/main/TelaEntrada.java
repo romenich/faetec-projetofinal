@@ -16,6 +16,8 @@ public class TelaEntrada extends javax.swing.JFrame {
      */
     public TelaEntrada() {
         initComponents();
+        int screenWidth = 865;
+        int screenHeight = 516;
     }
 
     /**
@@ -74,7 +76,7 @@ public class TelaEntrada extends javax.swing.JFrame {
                             .addComponent(cnpjLABEL)
                             .addGap(18, 18, 18)
                             .addComponent(cnpjTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(517, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(voltarBTN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -92,14 +94,13 @@ public class TelaEntrada extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(codigoTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(voltarBTN)
                     .addComponent(confirmarBTN)))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBTNActionPerformed
