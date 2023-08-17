@@ -36,61 +36,116 @@ public class TelaPrincipal extends javax.swing.JFrame {
         informativoLABEL = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        painelLINHA = new javax.swing.JPanel();
+        circulanteATV = new javax.swing.JLabel();
+        nomecontaATVLABEL = new javax.swing.JLabel();
+        nomeCONTATXT = new javax.swing.JTextField();
+        opcaoUMATVBTN = new javax.swing.JRadioButton();
+        naocirculanteATV = new javax.swing.JLabel();
+        opcaoDOISATVBTN = new javax.swing.JRadioButton();
+        valorcontaATVLABEL = new javax.swing.JLabel();
+        valorcontaTXT = new javax.swing.JTextField();
+        circulantePASS = new javax.swing.JLabel();
+        naocirculantePASS = new javax.swing.JLabel();
+        opcaoUMPASSBTN = new javax.swing.JRadioButton();
+        opcaoDOISPASSBTN = new javax.swing.JRadioButton();
+        nomecontaPASSLABEL = new javax.swing.JLabel();
+        nomecontaPASSTXT = new javax.swing.JTextField();
+        valorcontaPASSLABEL = new javax.swing.JLabel();
+        valorcontaPASSTXT = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        patrimonioLABEL1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        patrimonioLIQUIDOTXT = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         informativoLABEL.setText("Insira os dados abaixo para calcular o Balanço Patrimonial da Empresa:");
+        getContentPane().add(informativoLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 0, -1, -1));
 
         jLabel1.setText("Ativos");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 20, -1, -1));
 
         jLabel2.setText("Passivos");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 20, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        painelLINHA.setBackground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        javax.swing.GroupLayout painelLINHALayout = new javax.swing.GroupLayout(painelLINHA);
+        painelLINHA.setLayout(painelLINHALayout);
+        painelLINHALayout.setHorizontalGroup(
+            painelLINHALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        painelLINHALayout.setVerticalGroup(
+            painelLINHALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 179, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(73, 73, 73))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(informativoLABEL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(informativoLABEL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 185, Short.MAX_VALUE))
-        );
+        getContentPane().add(painelLINHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 20, -1, -1));
+
+        circulanteATV.setText("Circulante");
+        getContentPane().add(circulanteATV, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        nomecontaATVLABEL.setText("Nome:");
+        getContentPane().add(nomecontaATVLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 79, -1, -1));
+
+        nomeCONTATXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeCONTATXTActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nomeCONTATXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 99, 100, -1));
+        getContentPane().add(opcaoUMATVBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 56, -1, -1));
+
+        naocirculanteATV.setText("Não Circulante");
+        getContentPane().add(naocirculanteATV, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 40, -1, -1));
+        getContentPane().add(opcaoDOISATVBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 56, -1, -1));
+
+        valorcontaATVLABEL.setText("Valor:");
+        getContentPane().add(valorcontaATVLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 137, -1, -1));
+        getContentPane().add(valorcontaTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 157, 100, -1));
+
+        circulantePASS.setText("Circulante");
+        getContentPane().add(circulantePASS, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 41, -1, -1));
+
+        naocirculantePASS.setText("Não Circulante");
+        getContentPane().add(naocirculantePASS, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 41, -1, -1));
+        getContentPane().add(opcaoUMPASSBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 57, -1, -1));
+        getContentPane().add(opcaoDOISPASSBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 57, -1, -1));
+
+        nomecontaPASSLABEL.setText("Nome:");
+        getContentPane().add(nomecontaPASSLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 85, -1, -1));
+        getContentPane().add(nomecontaPASSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 105, 100, -1));
+
+        valorcontaPASSLABEL.setText("Valor:");
+        getContentPane().add(valorcontaPASSLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 136, -1, -1));
+        getContentPane().add(valorcontaPASSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 156, 100, -1));
+
+        jButton1.setText("+");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 176, -1, -1));
+
+        jButton2.setText("+");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 176, -1, -1));
+
+        patrimonioLABEL1.setText("Patrimônio Liquído: ");
+        getContentPane().add(patrimonioLABEL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
+
+        patrimonioLIQUIDOTXT.setEditable(false);
+        patrimonioLIQUIDOTXT.setColumns(20);
+        patrimonioLIQUIDOTXT.setRows(5);
+        jScrollPane1.setViewportView(patrimonioLIQUIDOTXT);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nomeCONTATXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCONTATXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeCONTATXTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,9 +183,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel circulanteATV;
+    private javax.swing.JLabel circulantePASS;
     private javax.swing.JLabel informativoLABEL;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel naocirculanteATV;
+    private javax.swing.JLabel naocirculantePASS;
+    private javax.swing.JTextField nomeCONTATXT;
+    private javax.swing.JLabel nomecontaATVLABEL;
+    private javax.swing.JLabel nomecontaPASSLABEL;
+    private javax.swing.JTextField nomecontaPASSTXT;
+    private javax.swing.JRadioButton opcaoDOISATVBTN;
+    private javax.swing.JRadioButton opcaoDOISPASSBTN;
+    private javax.swing.JRadioButton opcaoUMATVBTN;
+    private javax.swing.JRadioButton opcaoUMPASSBTN;
+    private javax.swing.JPanel painelLINHA;
+    private javax.swing.JLabel patrimonioLABEL1;
+    private javax.swing.JTextArea patrimonioLIQUIDOTXT;
+    private javax.swing.JLabel valorcontaATVLABEL;
+    private javax.swing.JLabel valorcontaPASSLABEL;
+    private javax.swing.JTextField valorcontaPASSTXT;
+    private javax.swing.JTextField valorcontaTXT;
     // End of variables declaration//GEN-END:variables
 }
