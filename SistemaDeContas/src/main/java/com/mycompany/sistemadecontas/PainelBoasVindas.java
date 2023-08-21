@@ -31,8 +31,12 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
+        botaoRelatorio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1093, 614));
+        setPreferredSize(new java.awt.Dimension(1093, 614));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
@@ -43,37 +47,37 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 255));
         jLabel2.setText("Inserir Passivos");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel3.setFont(new java.awt.Font("Noto Sans", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 204));
-        jLabel3.setText("Gerador de Balanço Patrimonial");
+        jLabel3.setText("Inserção dos Ativos e Passivos");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
+                .addContainerGap(136, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(82, 82, 82))
+                .addGap(101, 101, 101))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel3)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 730, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 730, -1));
 
         botaoVoltar.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
         botaoVoltar.setText("Voltar");
@@ -82,7 +86,11 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 botaoVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, -1, -1));
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, -1, -1));
+
+        botaoRelatorio.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        botaoRelatorio.setText("Gerar Relatório");
+        getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -138,6 +146,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoRelatorio;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

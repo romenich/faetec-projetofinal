@@ -39,21 +39,24 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         botaoSobre = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1093, 614));
+        setPreferredSize(new java.awt.Dimension(1093, 614));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         senhaUsuario.setText("Senha:");
-        getContentPane().add(senhaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        getContentPane().add(senhaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
 
         nomeUsuario.setText("Usuário: ");
-        getContentPane().add(nomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+        getContentPane().add(nomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
 
         campoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(campoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 190, -1));
-        getContentPane().add(campoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 190, -1));
+        getContentPane().add(campoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 190, -1));
+        getContentPane().add(campoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 190, -1));
 
         botaoEntrar.setText("Entrar");
         botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +64,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
+        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
 
         botaoLimpar.setText("Limpar ");
         botaoLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,32 +72,32 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoLimparActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, -1, -1));
+        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, -1));
 
         painelSoftware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel3.setFont(new java.awt.Font("Source Code Pro", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel3.setText("Sistema de Contas");
+        jLabel3.setText("Sistema de Controle Patrimonial");
 
         javax.swing.GroupLayout painelSoftwareLayout = new javax.swing.GroupLayout(painelSoftware);
         painelSoftware.setLayout(painelSoftwareLayout);
         painelSoftwareLayout.setHorizontalGroup(
             painelSoftwareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelSoftwareLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(138, 138, 138))
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
         painelSoftwareLayout.setVerticalGroup(
             painelSoftwareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelSoftwareLayout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(38, 38, 38))
         );
 
-        getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 420, -1));
+        getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 650, 130));
 
         botaoSobre.setText("Sobre");
         botaoSobre.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +105,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoSobreActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
+        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,7 +139,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
     private void botaoSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSobreActionPerformed
         // TODO add your handling code here:
-        String mensagem = "Esse software é um gerador de Balanço Patrimonial,\n"
+        String mensagem = "Esse software é um Sistema de Controle Patrimonial,\n"
                    + "e foi desenvolvido para o Projeto Final do curso Técnico em Informática,\n"
                    + "da Faetec de Santo Antônio de Pádua - RJ.";
     JOptionPane.showMessageDialog(this, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);

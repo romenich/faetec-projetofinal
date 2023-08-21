@@ -13,7 +13,7 @@ import javax.swing.table.TableColumn;
  * @author reydemonio
  */
 public class TelaAtivos extends javax.swing.JFrame {
-     private DefaultTableModel tableModel;
+     private final DefaultTableModel tableModel;
 
     /**
      * Creates new form TelaAtivos
@@ -87,6 +87,9 @@ public class TelaAtivos extends javax.swing.JFrame {
         tabelaAtivos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1093, 614));
+        setPreferredSize(new java.awt.Dimension(1093, 614));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botaoVoltar.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
@@ -96,7 +99,7 @@ public class TelaAtivos extends javax.swing.JFrame {
                 botaoVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, -1, -1));
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
 
         tabelaAtivos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -126,7 +129,7 @@ public class TelaAtivos extends javax.swing.JFrame {
         tabelaAtivos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabelaAtivos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 460, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 460, 340));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
