@@ -10,7 +10,7 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * @author reydemonio
+ * @author romenik
  */
 public class TelaAtivos extends javax.swing.JFrame {
      private final DefaultTableModel tableModel;

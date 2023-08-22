@@ -6,7 +6,7 @@ package com.mycompany.sistemadecontas;
 
 /**
  *
- * @author reydemonio
+ * @author romenik
  */
 public class SistemaDeContas {
 

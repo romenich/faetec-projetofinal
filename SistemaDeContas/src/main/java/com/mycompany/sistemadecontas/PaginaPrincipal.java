@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author reydemonio
+ * @author romenik
  */
 public class PaginaPrincipal extends javax.swing.JFrame {
 
