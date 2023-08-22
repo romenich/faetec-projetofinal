@@ -85,6 +85,9 @@ public class TelaAtivos extends javax.swing.JFrame {
         botaoVoltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaAtivos = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        botaoSalvarContas = new javax.swing.JButton();
+        botaoMaisContas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
@@ -101,8 +104,19 @@ public class TelaAtivos extends javax.swing.JFrame {
         });
         getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
 
+        tabelaAtivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tabelaAtivos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -129,7 +143,20 @@ public class TelaAtivos extends javax.swing.JFrame {
         tabelaAtivos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabelaAtivos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 460, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 900, 350));
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel1.setText("Adicione as contas de Ativo da empresa");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+
+        botaoSalvarContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoSalvarContas.setText("Salvar Contas");
+        getContentPane().add(botaoSalvarContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
+
+        botaoMaisContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoMaisContas.setText("Adicionar Mais Contas");
+        getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,7 +204,10 @@ public class TelaAtivos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoMaisContas;
+    private javax.swing.JButton botaoSalvarContas;
     private javax.swing.JButton botaoVoltar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaAtivos;
     // End of variables declaration//GEN-END:variables

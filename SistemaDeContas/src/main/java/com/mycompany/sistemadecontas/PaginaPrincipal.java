@@ -44,9 +44,11 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        senhaUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         senhaUsuario.setText("Senha:");
         getContentPane().add(senhaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
 
+        nomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         nomeUsuario.setText("Usuário: ");
         getContentPane().add(nomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
 
@@ -55,9 +57,10 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 campoUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(campoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 190, -1));
-        getContentPane().add(campoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 190, -1));
+        getContentPane().add(campoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 190, -1));
+        getContentPane().add(campoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 190, -1));
 
+        botaoEntrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoEntrar.setText("Entrar");
         botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +69,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
 
+        botaoLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoLimpar.setText("Limpar ");
         botaoLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,13 +103,14 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 650, 130));
 
+        botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoSobre.setText("Sobre");
         botaoSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoSobreActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
+        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
