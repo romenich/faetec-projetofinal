@@ -47,6 +47,31 @@ public class TelaPassivos extends javax.swing.JFrame {
             }
         });
     }
+    // Configurar ouvinte para coluna "Não Circulante"
+        TableColumn naoCirculanteColumn = tabelaPassivos.getColumnModel().getColumn(3);
+        naoCirculanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+        naoCirculanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
+            @Override
+            public void editingStopped(ChangeEvent e) {
+                int row = tabelaPassivos.getSelectedRow();
+                boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
+                boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
+
+                if (naoCirculanteValue) {
+                    tableModel.setValueAt(false, row, 2); // Desmarca "Circulante"
+                } else if (!naoCirculanteValue && !circulanteValue) {
+                    tableModel.setValueAt(true, row, 2); // Marca "Circulante" se nenhum estiver marcado
+                }
+            }
+
+            @Override
+            public void editingCanceled(ChangeEvent e) {
+                // Não é necessário fazer nada aqui
+            }
+        });
+
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
