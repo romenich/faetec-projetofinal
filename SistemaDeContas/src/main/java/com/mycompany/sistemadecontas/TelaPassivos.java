@@ -14,12 +14,15 @@ import javax.swing.table.TableColumn;
  * @author romenik
  */
 public class TelaPassivos extends javax.swing.JFrame {
+    private final DefaultTableModel tableModel;
 
     /**
      * Creates new form TelaPassivos
      */
     public TelaPassivos() {
         initComponents();
+         // Inicialização do modelo da tabela
+        tableModel = (DefaultTableModel) tabelaPassivos.getModel();
     }
 
     /**
