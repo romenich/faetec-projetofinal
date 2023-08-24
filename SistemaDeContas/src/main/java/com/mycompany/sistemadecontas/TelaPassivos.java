@@ -23,6 +23,29 @@ public class TelaPassivos extends javax.swing.JFrame {
         initComponents();
          // Inicialização do modelo da tabela
         tableModel = (DefaultTableModel) tabelaPassivos.getModel();
+        
+         // Configurar ouvinte para coluna "Circulante"
+        TableColumn circulanteColumn = tabelaPassivos.getColumnModel().getColumn(2);
+        circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+        circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
+            @Override
+            public void editingStopped(ChangeEvent e) {
+                int row = tabelaPassivos.getSelectedRow();
+                boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
+                boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
+
+                if (circulanteValue) {
+                    tableModel.setValueAt(false, row, 3); // Desmarca "Não Circulante"
+                } else if (!circulanteValue && !naoCirculanteValue) {
+                    tableModel.setValueAt(true, row, 3); // Marca "Não Circulante" se nenhum estiver marcado
+                }
+            }
+
+            @Override
+            public void editingCanceled(ChangeEvent e) {
+                // Não é necessário fazer nada aqui
+            }
+        });
     }
 
     /**
@@ -36,7 +59,7 @@ public class TelaPassivos extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaPassivos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -56,8 +79,8 @@ public class TelaPassivos extends javax.swing.JFrame {
         jLabel1.setMinimumSize(new java.awt.Dimension(438, 30));
         jLabel1.setPreferredSize(new java.awt.Dimension(438, 30));
 
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaPassivos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        tabelaPassivos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -92,8 +115,8 @@ public class TelaPassivos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setName(""); // NOI18N
-        jScrollPane1.setViewportView(jTable1);
+        tabelaPassivos.setName(""); // NOI18N
+        jScrollPane1.setViewportView(tabelaPassivos);
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton1.setText("Salvar Contas");
@@ -185,6 +208,6 @@ public class TelaPassivos extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabelaPassivos;
     // End of variables declaration//GEN-END:variables
 }
