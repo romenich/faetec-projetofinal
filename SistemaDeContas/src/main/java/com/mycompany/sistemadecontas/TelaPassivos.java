@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package com.mycompany.sistemadecontas;
+import javax.swing.event.CellEditorListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -85,10 +89,7 @@ public class TelaPassivos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setMaximumSize(new java.awt.Dimension(2147483647, 320));
-        jTable1.setMinimumSize(new java.awt.Dimension(60, 320));
         jTable1.setName(""); // NOI18N
-        jTable1.setPreferredSize(new java.awt.Dimension(300, 320));
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
