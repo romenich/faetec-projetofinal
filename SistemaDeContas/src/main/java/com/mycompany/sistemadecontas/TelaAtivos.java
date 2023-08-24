@@ -90,12 +90,13 @@ public class TelaAtivos extends javax.swing.JFrame {
         botaoMaisContas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ativos");
         setMaximumSize(new java.awt.Dimension(1093, 614));
         setPreferredSize(new java.awt.Dimension(1093, 614));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botaoVoltar.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        botaoVoltar.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoVoltar.setText("Voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +106,7 @@ public class TelaAtivos extends javax.swing.JFrame {
         getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
 
         tabelaAtivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        tabelaAtivos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tabelaAtivos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -147,7 +149,9 @@ public class TelaAtivos extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Adicione as contas de Ativo da empresa");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         botaoSalvarContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
