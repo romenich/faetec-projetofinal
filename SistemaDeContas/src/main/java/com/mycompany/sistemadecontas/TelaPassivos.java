@@ -14,7 +14,7 @@ import javax.swing.table.TableColumn;
  * @author romenik
  */
 public class TelaPassivos extends javax.swing.JFrame {
-    private final DefaultTableModel tableModel;
+    private DefaultTableModel tableModel;
 
     /**
      * Creates new form TelaPassivos
@@ -24,7 +24,10 @@ public class TelaPassivos extends javax.swing.JFrame {
          // Inicialização do modelo da tabela
         tableModel = (DefaultTableModel) tabelaPassivos.getModel();
         
-         // Configurar ouvinte para coluna "Circulante"
+      // Inicialização do modelo da tabela
+        tableModel = (DefaultTableModel) tabelaPassivos.getModel();
+        
+      // Configurar ouvinte para coluna "Circulante"
         TableColumn circulanteColumn = tabelaPassivos.getColumnModel().getColumn(2);
         circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
         circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
@@ -46,8 +49,8 @@ public class TelaPassivos extends javax.swing.JFrame {
                 // Não é necessário fazer nada aqui
             }
         });
-    }
-    // Configurar ouvinte para coluna "Não Circulante"
+
+// Configurar ouvinte para coluna "Não Circulante"
         TableColumn naoCirculanteColumn = tabelaPassivos.getColumnModel().getColumn(3);
         naoCirculanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
         naoCirculanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
@@ -73,6 +76,13 @@ public class TelaPassivos extends javax.swing.JFrame {
 
     }
 
+    @org.jetbrains.annotations.Contract(value = " -> fail", pure = true)
+    private void initComponents() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -85,15 +95,16 @@ public class TelaPassivos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaPassivos = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botaoSalvarContas = new javax.swing.JButton();
+        botaoMaisContas = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Passivos");
         setMaximumSize(new java.awt.Dimension(1093, 614));
         setMinimumSize(new java.awt.Dimension(960, 563));
         setPreferredSize(new java.awt.Dimension(1093, 614));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
@@ -103,8 +114,10 @@ public class TelaPassivos extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(438, 30));
         jLabel1.setMinimumSize(new java.awt.Dimension(438, 30));
         jLabel1.setPreferredSize(new java.awt.Dimension(438, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 523, -1));
 
         tabelaPassivos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        tabelaPassivos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tabelaPassivos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -143,67 +156,35 @@ public class TelaPassivos extends javax.swing.JFrame {
         tabelaPassivos.setName(""); // NOI18N
         jScrollPane1.setViewportView(tabelaPassivos);
 
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton1.setText("Salvar Contas");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 950, 370));
 
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton2.setText("Adicionar mais contas");
+        botaoSalvarContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoSalvarContas.setText("Salvar Contas");
+        getContentPane().add(botaoSalvarContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 457, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton3.setText("Voltar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botaoMaisContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoMaisContas.setText("Adicionar mais contas");
+        getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, -1, -1));
+
+        botaoVoltar.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botaoVoltarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(83, 83, 83))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3))
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
-        );
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 568, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
         PainelBoasVindas newFrame = new PainelBoasVindas();
         newFrame.setVisible(true);
         dispose();
     }              
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,9 +222,9 @@ public class TelaPassivos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton botaoMaisContas;
+    private javax.swing.JButton botaoSalvarContas;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaPassivos;
