@@ -23,10 +23,7 @@ public class TelaPassivos extends javax.swing.JFrame {
         initComponents();
          // Inicialização do modelo da tabela
         tableModel = (DefaultTableModel) tabelaPassivos.getModel();
-        
-      // Inicialização do modelo da tabela
-        tableModel = (DefaultTableModel) tabelaPassivos.getModel();
-        
+            
       // Configurar ouvinte para coluna "Circulante"
         TableColumn circulanteColumn = tabelaPassivos.getColumnModel().getColumn(2);
         circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
