@@ -7,7 +7,7 @@ package com.mycompany.sistemadecontas;
 
 /**
  *
- * @author FAETEC-PÁDUA
+ * @author romenik
  */
 public class TelaPassivos extends javax.swing.JFrame {
 
