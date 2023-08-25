@@ -180,6 +180,18 @@ public class TelaAtivos extends javax.swing.JFrame {
     private void botaoSalvarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarContasActionPerformed
         // TODO add your handling code here:
         
+    for (int i = 0; i < tableModel.getRowCount(); i++) {
+        String nomeConta = (String) tableModel.getValueAt(i, 0);
+        Double valor = (Double) tableModel.getValueAt(i, 1);
+        Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+        Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+
+        // Aqui você poderia realizar alguma ação com esses dados
+        // Por exemplo, salvar em um banco de dados, calcular algum total, etc.
+    }
+
+
+        
     }//GEN-LAST:event_botaoSalvarContasActionPerformed
 
     /**
