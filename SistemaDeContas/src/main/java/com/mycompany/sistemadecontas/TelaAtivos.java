@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.sistemadecontas;
+
 import javax.swing.event.CellEditorListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
@@ -165,6 +162,11 @@ public class TelaAtivos extends javax.swing.JFrame {
 
         botaoMaisContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoMaisContas.setText("Adicionar Mais Contas");
+        botaoMaisContas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMaisContasActionPerformed(evt);
+            }
+        });
         getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
 
         pack();
@@ -193,6 +195,13 @@ public class TelaAtivos extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_botaoSalvarContasActionPerformed
+
+    private void botaoMaisContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisContasActionPerformed
+        // TODO add your handling code here:
+        TelaAtivos newFrame = new TelaAtivos();
+        newFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botaoMaisContasActionPerformed
 
     /**
      * @param args the command line arguments

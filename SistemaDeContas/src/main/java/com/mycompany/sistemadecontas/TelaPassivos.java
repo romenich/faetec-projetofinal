@@ -156,6 +156,11 @@ public class TelaPassivos extends javax.swing.JFrame {
 
         botaoMaisContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoMaisContas.setText("Adicionar Mais Contas");
+        botaoMaisContas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMaisContasActionPerformed(evt);
+            }
+        });
         getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, -1, -1));
 
         botaoVoltar.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -192,6 +197,13 @@ public class TelaPassivos extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_botaoSalvarContasActionPerformed
+
+    private void botaoMaisContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisContasActionPerformed
+        // TODO add your handling code here:
+        TelaPassivos newFrame = new TelaPassivos();
+        newFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botaoMaisContasActionPerformed
 
     /**
      * @param args the command line arguments
