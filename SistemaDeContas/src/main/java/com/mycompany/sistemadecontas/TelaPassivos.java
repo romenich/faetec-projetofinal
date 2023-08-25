@@ -10,68 +10,68 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * @author romenik
+ * @author reydemonio
  */
-public class TelaAtivos extends javax.swing.JFrame {
+public class TelaPassivos extends javax.swing.JFrame {
      private final DefaultTableModel tableModel;
 
+     
+
     /**
-     * Creates new form TelaAtivos
+     * Creates new form TelaPassivos
      */
-    public TelaAtivos() {
+    public TelaPassivos() {
         initComponents();
-        
-        // Inicialização do modelo da tabela
-        tableModel = (DefaultTableModel) tabelaAtivos.getModel();
-        
-      // Configurar ouvinte para coluna "Circulante"
-        TableColumn circulanteColumn = tabelaAtivos.getColumnModel().getColumn(2);
-        circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
-        circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
-            @Override
-            public void editingStopped(ChangeEvent e) {
-                int row = tabelaAtivos.getSelectedRow();
-                boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
-                boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
+         // Inicialização do modelo da tabela
+        tableModel = (DefaultTableModel) tabelaPassivos.getModel();
 
-                if (circulanteValue) {
-                    tableModel.setValueAt(false, row, 3); // Desmarca "Não Circulante"
-                } else if (!circulanteValue && !naoCirculanteValue) {
-                    tableModel.setValueAt(true, row, 3); // Marca "Não Circulante" se nenhum estiver marcado
+                    // Configurar ouvinte para coluna "Circulante"
+            TableColumn circulanteColumn = tabelaPassivos.getColumnModel().getColumn(2);
+            circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+            circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
+                @Override
+                public void editingStopped(ChangeEvent e) {
+                    int row = tabelaPassivos.getSelectedRow();
+                    boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
+                    boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
+
+                    if (circulanteValue) {
+                        tableModel.setValueAt(false, row, 3); // Desmarca "Não Circulante"
+                    } else if (!circulanteValue && !naoCirculanteValue) {
+                        tableModel.setValueAt(true, row, 3); // Marca "Não Circulante" se nenhum estiver marcado
+                    }
                 }
-            }
 
-            @Override
-            public void editingCanceled(ChangeEvent e) {
-                // Não é necessário fazer nada aqui
-            }
-        });
-
-// Configurar ouvinte para coluna "Não Circulante"
-        TableColumn naoCirculanteColumn = tabelaAtivos.getColumnModel().getColumn(3);
-        naoCirculanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
-        naoCirculanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
-            @Override
-            public void editingStopped(ChangeEvent e) {
-                int row = tabelaAtivos.getSelectedRow();
-                boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
-                boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
-
-                if (naoCirculanteValue) {
-                    tableModel.setValueAt(false, row, 2); // Desmarca "Circulante"
-                } else if (!naoCirculanteValue && !circulanteValue) {
-                    tableModel.setValueAt(true, row, 2); // Marca "Circulante" se nenhum estiver marcado
+                @Override
+                public void editingCanceled(ChangeEvent e) {
+                    // Não é necessário fazer nada aqui
                 }
-            }
+            });
 
-            @Override
-            public void editingCanceled(ChangeEvent e) {
-                // Não é necessário fazer nada aqui
-            }
-        });
+            // Configurar ouvinte para coluna "Não Circulante"
+            TableColumn naoCirculanteColumn = tabelaPassivos.getColumnModel().getColumn(3);
+            naoCirculanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+            naoCirculanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
+                @Override
+                public void editingStopped(ChangeEvent e) {
+                    int row = tabelaPassivos.getSelectedRow();
+                    boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
+                    boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
 
+                    if (naoCirculanteValue) {
+                        tableModel.setValueAt(false, row, 2); // Desmarca "Circulante"
+                    } else if (!naoCirculanteValue && !circulanteValue) {
+                        tableModel.setValueAt(true, row, 2); // Marca "Circulante" se nenhum estiver marcado
+                    }
+                }
 
-    }
+                @Override
+                public void editingCanceled(ChangeEvent e) {
+                    // Não é necessário fazer nada aqui
+                }
+            });
+
+                }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -82,32 +82,33 @@ public class TelaAtivos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botaoVoltar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaAtivos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaPassivos = new javax.swing.JTable();
         botaoSalvarContas = new javax.swing.JButton();
         botaoMaisContas = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ativos");
+        setTitle("Passivos");
         setMaximumSize(new java.awt.Dimension(1093, 614));
+        setMinimumSize(new java.awt.Dimension(960, 562));
         setPreferredSize(new java.awt.Dimension(1093, 614));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botaoVoltar.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        botaoVoltar.setText("Voltar");
-        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVoltarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel1.setText("Adicione as contas de Passivo da empresa");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel1.setMaximumSize(new java.awt.Dimension(359, 30));
+        jLabel1.setMinimumSize(new java.awt.Dimension(359, 30));
+        jLabel1.setPreferredSize(new java.awt.Dimension(359, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 15, 435, -1));
 
-        tabelaAtivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        tabelaAtivos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        tabelaAtivos.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaPassivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        tabelaPassivos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tabelaPassivos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -142,17 +143,10 @@ public class TelaAtivos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tabelaAtivos.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tabelaAtivos);
+        tabelaPassivos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabelaPassivos);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 900, 350));
-
-        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 204));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Adicione as contas de Ativo da empresa");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         botaoSalvarContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoSalvarContas.setText("Salvar Contas");
@@ -161,13 +155,23 @@ public class TelaAtivos extends javax.swing.JFrame {
                 botaoSalvarContasActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoSalvarContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
+        getContentPane().add(botaoSalvarContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, -1));
 
         botaoMaisContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoMaisContas.setText("Adicionar Mais Contas");
-        getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
+        getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, -1, -1));
+
+        botaoVoltar.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
@@ -199,20 +203,20 @@ public class TelaAtivos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaAtivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaAtivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaAtivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaAtivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaAtivos().setVisible(true);
+                new TelaPassivos().setVisible(true);
             }
         });
     }
@@ -223,6 +227,6 @@ public class TelaAtivos extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabelaAtivos;
+    private javax.swing.JTable tabelaPassivos;
     // End of variables declaration//GEN-END:variables
 }
