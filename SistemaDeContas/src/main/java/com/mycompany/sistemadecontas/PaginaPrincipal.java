@@ -88,20 +88,20 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         painelSoftware.setLayout(painelSoftwareLayout);
         painelSoftwareLayout.setHorizontalGroup(
             painelSoftwareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelSoftwareLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+            .addGroup(painelSoftwareLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addGap(64, 64, 64))
         );
         painelSoftwareLayout.setVerticalGroup(
             painelSoftwareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelSoftwareLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(38, 38, 38))
         );
 
-        getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 650, 130));
+        getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 810, 130));
 
         botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoSobre.setText("Sobre");
