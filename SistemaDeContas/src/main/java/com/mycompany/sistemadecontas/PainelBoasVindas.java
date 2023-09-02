@@ -44,7 +44,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, -1, 30));
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 255));
@@ -54,7 +54,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, -1, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -97,7 +97,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 botaoRelatorioActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
+        getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
