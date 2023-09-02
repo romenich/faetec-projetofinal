@@ -121,18 +121,29 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
         // TODO add your handling code here:
-        String usuario = campoUsuario.getText();
-        String senha = campoSenha.getText();
         
-        if (usuario.equals("Admin") && senha.equals("admin")){
-            PainelBoasVindas newFrame = new PainelBoasVindas();
-            newFrame.setVisible(true);
-            dispose();
+      try{ 
+            String usuario = campoUsuario.getText();
+            String senha = campoSenha.getText();
             
-        }
-        else{
-            JOptionPane.showConfirmDialog(rootPane, "Usuário ou senha incorreto!!!");
-        }
+            if (usuario.isEmpty() || senha.isEmpty()){
+             JOptionPane.showMessageDialog( rootPane, "Por favor, preencha os campos.") ;
+             return;
+            }
+
+            if (usuario.equals("Admin") && senha.equals("admin")){
+                    PainelBoasVindas newFrame = new PainelBoasVindas();
+                newFrame.setVisible(true);
+                dispose();
+
+            }
+            else{
+                JOptionPane.showConfirmDialog(rootPane, "Usuário ou senha incorreto!!!");
+            }
+    
+    }catch (Exception ex){
+                JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro.");
+                }
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
