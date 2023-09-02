@@ -149,9 +149,10 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
         // TODO add your handling code here:
         //setando o texto para uma variável vazia a fim de limpar os campos
-        campoUsuario.setText("");
-        campoSenha.setText("");
-       
+        
+         campoUsuario.setText("");
+         campoSenha.setText("");
+        
     }//GEN-LAST:event_botaoLimparActionPerformed
 
     private void botaoSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSobreActionPerformed
