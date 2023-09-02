@@ -137,6 +137,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
         // TODO add your handling code here:
+        //setando o texto para uma variável vazia a fim de limpar os campos
         campoUsuario.setText("");
         campoSenha.setText("");
        
@@ -144,6 +145,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
     private void botaoSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSobreActionPerformed
         // TODO add your handling code here:
+        // curta mensagem explicando do que se trata o software
         String mensagem = "Esse software é um Sistema de Controle Patrimonial,\n"
                    + "e foi desenvolvido para o Projeto Final do curso Técnico em Informática,\n"
                    + "da Faetec de Santo Antônio de Pádua - RJ.";
