@@ -27,12 +27,19 @@ public class TelaRelatorios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        relatoriosLABEL = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
         setMinimumSize(new java.awt.Dimension(940, 551));
         setPreferredSize(new java.awt.Dimension(1093, 614));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        relatoriosLABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        relatoriosLABEL.setText("               Relatórios");
+        relatoriosLABEL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        getContentPane().add(relatoriosLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 330, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -73,5 +80,6 @@ public class TelaRelatorios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel relatoriosLABEL;
     // End of variables declaration//GEN-END:variables
 }
