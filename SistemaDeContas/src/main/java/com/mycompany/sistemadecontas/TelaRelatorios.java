@@ -39,7 +39,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         relatoriosLABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         relatoriosLABEL.setText("               Relatórios");
         relatoriosLABEL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        getContentPane().add(relatoriosLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 330, 30));
+        getContentPane().add(relatoriosLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 330, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
