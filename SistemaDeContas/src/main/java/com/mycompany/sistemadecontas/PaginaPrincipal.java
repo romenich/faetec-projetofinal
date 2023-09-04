@@ -132,7 +132,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             }
 
             if (usuario.equals("Admin") && senha.equals("admin")){
-                    PainelBoasVindas newFrame = new PainelBoasVindas();
+                PainelBoasVindas newFrame = new PainelBoasVindas();
                 newFrame.setVisible(true);
                 dispose();
 
