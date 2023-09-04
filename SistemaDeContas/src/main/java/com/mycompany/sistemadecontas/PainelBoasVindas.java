@@ -119,6 +119,9 @@ public class PainelBoasVindas extends javax.swing.JFrame {
 
     private void botaoRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRelatorioActionPerformed
         // TODO add your handling code here:
+        TelaRelatorios newFrame = new TelaRelatorios();
+        newFrame.setVisible(true);
+        dispose();
     }//GEN-LAST:event_botaoRelatorioActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
