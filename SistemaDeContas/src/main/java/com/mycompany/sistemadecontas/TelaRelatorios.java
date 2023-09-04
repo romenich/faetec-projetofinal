@@ -44,10 +44,22 @@ public class TelaRelatorios extends javax.swing.JFrame {
 
         botaoVoltar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
         getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        // TODO add your handling code here:
+        PainelBoasVindas newFrame = new PainelBoasVindas();
+        newFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     /**
      * @param args the command line arguments
