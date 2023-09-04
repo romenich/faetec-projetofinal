@@ -28,6 +28,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
     private void initComponents() {
 
         relatoriosLABEL = new javax.swing.JLabel();
+        botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
@@ -40,6 +41,10 @@ public class TelaRelatorios extends javax.swing.JFrame {
         relatoriosLABEL.setText("               Relatórios");
         relatoriosLABEL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         getContentPane().add(relatoriosLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 330, 30));
+
+        botaoVoltar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        botaoVoltar.setText("Voltar");
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,6 +85,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel relatoriosLABEL;
     // End of variables declaration//GEN-END:variables
 }
