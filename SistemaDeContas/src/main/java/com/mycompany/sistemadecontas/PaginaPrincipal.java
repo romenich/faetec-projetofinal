@@ -7,9 +7,9 @@ package com.mycompany.sistemadecontas;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 
 /**
  *
@@ -24,24 +24,23 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         initComponents();
         criarTabelaContaAcesso();
     }
-    
+
     private void criarTabelaContaAcesso() {
-    String url = "jdbc:sqlite:contaacesso.db"; 
-    String sql = "CREATE TABLE IF NOT EXISTS contaAcesso (\n"
-            + "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-            + "    usuario TEXT NOT NULL,\n"
-            + "    senha TEXT NOT NULL\n"
-            + ");";
+        String url = "jdbc:sqlite:contaacesso.db";
+        String sql = "CREATE TABLE IF NOT EXISTS contaAcesso (\n"
+                + "    idAcesso INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                + "    usuarioAcesso TEXT NOT NULL,\n"
+                + "    senhaAcesso TEXT NOT NULL\n"
+                + ");";
 
-    try (Connection conn = DriverManager.getConnection(url);
-         Statement stmt = conn.createStatement()) {
-        // Cria a tabela se ela não existir
-        stmt.execute(sql);
-    } catch (SQLException e) {
-        System.out.println(e.getMessage());
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement()) {
+            // Cria a tabela se ela não existir
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
-}
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -161,55 +160,92 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
         // TODO add your handling code here:
-        
-      try{ 
-             String usuario = campoUsuario.getText();
-             String senha = new String(campoSenha.getPassword()); // para obter a senha como uma String
-             
 
-            
-            if (usuario.isEmpty() || senha.isEmpty() ) {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, preencha todos os campos.");
-            return;
+        try {
+            String usuario = campoUsuario.getText();
+            String senha = new String(campoSenha.getPassword()); // para obter a senha como uma String
+
+            if (usuario.isEmpty() || senha.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "Por favor, preencha todos os campos.");
+                return;
             }
 
-            if (usuario.equals("Admin") && senha.equals("admin")){
+            if (usuario.equals("Admin") && senha.equals("admin")) {
                 PainelBoasVindas newFrame = new PainelBoasVindas();
                 newFrame.setVisible(true);
                 dispose();
 
-            }
-            else{
+            } else {
                 JOptionPane.showConfirmDialog(rootPane, "Usuário ou senha incorreto!!!");
             }
-    
-    }catch (Exception ex){
-                JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro.");
-                }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro.");
+        }
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
         // TODO add your handling code here:
         //setando o texto para uma variável vazia a fim de limpar os campos
-        
-         campoUsuario.setText("");
-         campoSenha.setText("");
-         
-        
+
+        campoUsuario.setText("");
+        campoSenha.setText("");
+
+
     }//GEN-LAST:event_botaoLimparActionPerformed
 
     private void botaoSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSobreActionPerformed
         // TODO add your handling code here:
         // curta mensagem explicando do que se trata o software
         String mensagem = "Esse software é um Sistema de Controle Patrimonial,\n"
-                   + "e foi desenvolvido para o Projeto Final do curso Técnico em Informática,\n"
-                   + "da Faetec de Santo Antônio de Pádua - RJ.";
-    JOptionPane.showMessageDialog(this, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);
+                + "e foi desenvolvido para o Projeto Final do curso Técnico em Informática,\n"
+                + "da Faetec de Santo Antônio de Pádua - RJ.";
+        JOptionPane.showMessageDialog(this, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botaoSobreActionPerformed
 
     private void cadastroBOTAOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroBOTAOActionPerformed
         // TODO add your handling code here:
-        
+
+        try {
+            String usuario = campoUsuario.getText();
+            String senhaTexto = new String(campoSenha.getPassword()); // para obter a senha como uma String
+
+            if (usuario.isEmpty() || senhaTexto.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Conecte-se ao banco de dados SQLite
+            String url = "jdbc:sqlite:contaacesso.db";
+            try (Connection conn = DriverManager.getConnection(url)) {
+            // Definir a instrução SQL para inserir dados na tabela contaAcesso,
+                // omitindo o ID único, que será gerado automaticamente pelo banco de dados
+                String sql = "INSERT INTO contaAcesso (usuarioAcesso, senhaAcesso) VALUES (?, ?)";
+                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                    pstmt.setString(1, usuario);
+                    pstmt.setString(2, senhaTexto);
+
+                    // Execute a inserção
+                    pstmt.executeUpdate();
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro ao cadastrar.");
+                return;
+            }
+
+            // Limpe os campos após o cadastro
+            campoUsuario.setText("");
+            campoSenha.setText("");
+
+            // Exibir mensagem de sucesso no cadastro
+            JOptionPane.showMessageDialog(rootPane, "Cadastro realizado com sucesso!");
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro.");
+        }
+
+
     }//GEN-LAST:event_cadastroBOTAOActionPerformed
 
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
