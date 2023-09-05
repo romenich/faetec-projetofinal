@@ -62,8 +62,6 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botaoSobre = new javax.swing.JButton();
         cadastroBOTAO = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        campoID = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
@@ -100,7 +98,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, -1, -1));
+        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, -1, -1));
 
         botaoLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoLimpar.setText("Limpar ");
@@ -152,12 +150,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 cadastroBOTAOActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastroBOTAO, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Id único:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, -1, -1));
-        getContentPane().add(campoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 190, -1));
+        getContentPane().add(cadastroBOTAO, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -170,12 +163,14 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         
       try{ 
-            String usuario = campoUsuario.getText();
-            String senha = campoSenha.getText();
+             String usuario = campoUsuario.getText();
+             String senha = new String(campoSenha.getPassword()); // para obter a senha como uma String
+             
+
             
-            if (usuario.isEmpty() || senha.isEmpty()){
-             JOptionPane.showMessageDialog( rootPane, "Por favor, preencha os campos.") ;
-             return;
+            if (usuario.isEmpty() || senha.isEmpty() ) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor, preencha todos os campos.");
+            return;
             }
 
             if (usuario.equals("Admin") && senha.equals("admin")){
@@ -199,7 +194,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         
          campoUsuario.setText("");
          campoSenha.setText("");
-         campoID.setText("");
+         
         
     }//GEN-LAST:event_botaoLimparActionPerformed
 
@@ -261,10 +256,8 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botaoLimpar;
     private javax.swing.JButton botaoSobre;
     private javax.swing.JButton cadastroBOTAO;
-    private javax.swing.JPasswordField campoID;
     private javax.swing.JPasswordField campoSenha;
     private javax.swing.JTextField campoUsuario;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel nomeUsuario;
     private javax.swing.JPanel painelSoftware;
