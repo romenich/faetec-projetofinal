@@ -61,6 +61,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         painelSoftware = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         botaoSobre = new javax.swing.JButton();
+        cadastroBOTAO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
@@ -91,7 +92,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
+        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, -1, -1));
 
         botaoLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoLimpar.setText("Limpar ");
@@ -100,7 +101,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoLimparActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, -1));
+        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
 
         painelSoftware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
@@ -120,7 +121,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         painelSoftwareLayout.setVerticalGroup(
             painelSoftwareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelSoftwareLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(38, 38, 38))
         );
@@ -134,7 +135,11 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoSobreActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, -1, -1));
+        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+
+        cadastroBOTAO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cadastroBOTAO.setText("Cadastrar");
+        getContentPane().add(cadastroBOTAO, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -227,6 +232,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botaoEntrar;
     private javax.swing.JButton botaoLimpar;
     private javax.swing.JButton botaoSobre;
+    private javax.swing.JButton cadastroBOTAO;
     private javax.swing.JPasswordField campoSenha;
     private javax.swing.JTextField campoUsuario;
     private javax.swing.JLabel jLabel3;
