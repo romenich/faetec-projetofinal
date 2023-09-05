@@ -31,6 +31,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Relatórios");
         setMaximumSize(new java.awt.Dimension(1093, 614));
         setMinimumSize(new java.awt.Dimension(940, 551));
         setPreferredSize(new java.awt.Dimension(1093, 614));

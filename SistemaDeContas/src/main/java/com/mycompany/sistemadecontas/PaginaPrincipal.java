@@ -5,6 +5,11 @@
 package com.mycompany.sistemadecontas;
 
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 /**
  *
@@ -17,7 +22,26 @@ public class PaginaPrincipal extends javax.swing.JFrame {
      */
     public PaginaPrincipal() {
         initComponents();
+        criarTabelaContaAcesso();
     }
+    
+    private void criarTabelaContaAcesso() {
+    String url = "jdbc:sqlite:contaacesso.db"; 
+    String sql = "CREATE TABLE IF NOT EXISTS contaAcesso (\n"
+            + "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+            + "    usuario TEXT NOT NULL,\n"
+            + "    senha TEXT NOT NULL\n"
+            + ");";
+
+    try (Connection conn = DriverManager.getConnection(url);
+         Statement stmt = conn.createStatement()) {
+        // Cria a tabela se ela não existir
+        stmt.execute(sql);
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+    }
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
