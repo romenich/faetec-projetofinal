@@ -1,0 +1,8 @@
+Sistema de Controle Patrimonial
+
+O sistema de Controle Patrimonial é um software que visa auxiliar administradores de empresas a gerenciar informações sobre seus ativos e passivos de forma automatizada. Acessando o sistema com suas credenciais de entrada, os administradores podem inserir dados detalhados sobre os ativos e passivos da empresa, incluindo o nome da conta, o valor e a classificação se é circulante ou não circulante. Com base nas informações inseridas, o sistema calcula automaticamente o Patrimônio Líquido da empresa através da diferença entre ativos e passivos (PL= ativos – passivos) e gera um relatório. Uma das características essenciais do Sistema de Controle Patrimonial é a capacidade de avaliar o estado financeiro de uma empresa com base na relação entre seus ativos e passivos.
+Patrimônio Líquido Positivo: Quando o valor total dos ativos é maior do que o valor total dos passivos, a empresa desfruta de um Patrimônio Líquido positivo. Isso indica que os recursos e valores ativos superam as obrigações e dívidas, sugerindo saúde financeira e uma base sólida para o crescimento.
+Patrimônio Líquido Negativo: No entanto, se os passivos da empresa superam o valor de seus ativos, o Patrimônio Líquido se torna negativo. Isso indica que a empresa possui mais obrigações do que recursos disponíveis. É um sinal de alerta que pode requerer ação imediata para reequilibrar as finanças e evitar problemas financeiros graves.
+Essa análise financeira é crucial para ajudar os administradores a compreender a saúde financeira de sua empresa e tomar decisões informadas para garantir sua estabilidade e crescimento a longo prazo.
+
+
