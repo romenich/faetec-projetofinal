@@ -5,11 +5,7 @@
 package com.mycompany.sistemadecontas;
 
 import javax.swing.JOptionPane;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  *
@@ -28,9 +24,9 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void criarTabelaContaAcesso() {
         String url = "jdbc:sqlite:contaacesso.db";
         String sql = "CREATE TABLE IF NOT EXISTS contaAcesso (\n"
-                + "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-                + "    usuario TEXT NOT NULL,\n"
-                + "    senha TEXT NOT NULL\n"
+                + "    idAcesso INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                + "    usuarioAcesso TEXT NOT NULL,\n"
+                + "    senhaAcesso TEXT NOT NULL\n"
                 + ");";
 
         try (Connection conn = DriverManager.getConnection(url);
@@ -169,20 +165,37 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Por favor, preencha todos os campos.");
                 return;
             }
+            // Conecte-se ao banco de dados SQLite
+            String url = "jdbc:sqlite:contaacesso.db";
+            try (Connection conn = DriverManager.getConnection(url)) {
+                // Defina a instrução SQL para verificar o usuário e senha
+                String sql = "SELECT * FROM contaAcesso WHERE usuarioAcesso = ? AND senhaAcesso = ?";
+                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                    pstmt.setString(1, usuario);
+                    pstmt.setString(2, senha);
 
-            if (usuario.equals("Admin") && senha.equals("admin")) {
-                PainelBoasVindas newFrame = new PainelBoasVindas();
-                newFrame.setVisible(true);
-                dispose();
+                    // Execute a consulta
+                    ResultSet rs = pstmt.executeQuery();
 
-            } else {
-                JOptionPane.showConfirmDialog(rootPane, "Usuário ou senha incorreto!!!");
+                    // Verifique se o usuário e a senha correspondem a um registro
+                    if (rs.next()) {
+                        // Se correspondem, abra a tela de boas-vindas
+                        PainelBoasVindas newFrame = new PainelBoasVindas();
+                        newFrame.setVisible(true);
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Usuário ou senha incorretos.");
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro ao fazer login.");
             }
-
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro.");
         }
-    }//GEN-LAST:event_botaoEntrarActionPerformed
+    }
+    //GEN-LAST:event_botaoEntrarActionPerformed
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
         // TODO add your handling code here:
