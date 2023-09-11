@@ -31,7 +31,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         try (Connection conn = DriverManager.getConnection(url);
                 Statement stmt = conn.createStatement()) {
-            // Cria a tabela se ela não existir
+            // Criando a tabela caso não exista
             stmt.execute(sql);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
