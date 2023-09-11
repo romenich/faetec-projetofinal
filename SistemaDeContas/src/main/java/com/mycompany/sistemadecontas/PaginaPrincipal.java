@@ -195,7 +195,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro.");
         }
     }
-    //GEN-LAST:event_botaoEntrarActionPerformed
+//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
         // TODO add your handling code here:
@@ -231,7 +231,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             // Conecte-se ao banco de dados SQLite
             String url = "jdbc:sqlite:contaacesso.db";
             try (Connection conn = DriverManager.getConnection(url)) {
-            // Definir a instrução SQL para inserir dados na tabela contaAcesso,
+                // Definir a instrução SQL para inserir dados na tabela contaAcesso,
                 // omitindo o ID único, que será gerado automaticamente pelo banco de dados
                 String sql = "INSERT INTO contaAcesso (usuarioAcesso, senhaAcesso) VALUES (?, ?)";
                 try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
