@@ -165,19 +165,19 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Por favor, preencha todos os campos.");
                 return;
             }
-            // Conecte-se ao banco de dados SQLite
+            // Conectando ao banco de dados
             String url = "jdbc:sqlite:contaacesso.db";
             try (Connection conn = DriverManager.getConnection(url)) {
-                // Defina a instrução SQL para verificar o usuário e senha
+                // Definindo SQL para verificar o usuário e senha
                 String sql = "SELECT * FROM contaAcesso WHERE usuarioAcesso = ? AND senhaAcesso = ?";
                 try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                     pstmt.setString(1, usuario);
                     pstmt.setString(2, senha);
 
-                    // Execute a consulta
+                    // Executando a consulta
                     ResultSet rs = pstmt.executeQuery();
 
-                    // Verifique se o usuário e a senha correspondem a um registro
+                    // Verificando se o usuário e a senha correspondem a um registro
                     if (rs.next()) {
                         // Se correspondem, abra a tela de boas-vindas
                         PainelBoasVindas newFrame = new PainelBoasVindas();
