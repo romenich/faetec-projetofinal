@@ -5,7 +5,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.sql.*;
-
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -190,8 +190,41 @@ public class TelaAtivos extends javax.swing.JFrame {
         Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
         Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
 
-        // Aqui você poderia realizar alguma ação com esses dados
-        // Por exemplo, salvar em um banco de dados, calcular algum total, etc.
+        // criando a tabela
+        String createTableSQL = "CREATE TABLE IF NOT EXISTS contaAtivo (\n"
+                + "    idAtivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                + "    nomeConta TEXT NOT NULL,\n"
+                + "    valor REAL NOT NULL,\n"
+                + "    circulante INTEGER NOT NULL,\n"
+                + "    naoCirculante INTEGER NOT NULL\n"
+                + ");";
+
+        try (Connection conn = DriverManager.getConnection(url);
+             Statement stmt = conn.createStatement()) {
+            // Criando a tabela caso não exista
+            stmt.execute(createTableSQL);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        //para inserir os dados na tabela
+        String insertDataSQL = "INSERT INTO contaAtivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(insertDataSQL)) {
+            pstmt.setString(1, nomeConta);
+            pstmt.setDouble(2, valor);
+            pstmt.setInt(3, circulante ? 1 : 0); // 1 se verdadeiro, 0 se falso
+            pstmt.setInt(4, naoCirculante ? 1 : 0); // 1 se verdadeiro, 0 se falso
+
+            // Execute a inserção
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        //após salvar os dados, exibir uma mensagem de sucesso
+        JOptionPane.showMessageDialog(this, "Dados salvos com sucesso!");
+
+
     }
 
 
