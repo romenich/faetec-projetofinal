@@ -28,9 +28,9 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void criarTabelaContaAcesso() {
         String url = "jdbc:sqlite:contaacesso.db";
         String sql = "CREATE TABLE IF NOT EXISTS contaAcesso (\n"
-                + "    idAcesso INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-                + "    usuarioAcesso TEXT NOT NULL,\n"
-                + "    senhaAcesso TEXT NOT NULL\n"
+                + "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                + "    usuario TEXT NOT NULL,\n"
+                + "    senha TEXT NOT NULL\n"
                 + ");";
 
         try (Connection conn = DriverManager.getConnection(url);
