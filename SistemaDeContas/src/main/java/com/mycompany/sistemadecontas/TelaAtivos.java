@@ -182,52 +182,53 @@ public class TelaAtivos extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoSalvarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarContasActionPerformed
-        // TODO add your handling code here:
-        String url = "jdbc:sqlite:contaativo.db";
-        for (int i = 0; i < tableModel.getRowCount(); i++) {
-            String nomeConta = (String) tableModel.getValueAt(i, 0);
-            Double valor = (Double) tableModel.getValueAt(i, 1);
-            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
 
-            // criando a tabela
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS contaAtivo (\n"
-                    + "    idAtivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-                    + "    nomeConta TEXT NOT NULL,\n"
-                    + "    valor REAL NOT NULL,\n"
-                    + "    circulante INTEGER NOT NULL,\n"
-                    + "    naoCirculante INTEGER NOT NULL\n"
-                    + ");";
+            String url = "jdbc:sqlite:contaativo.db";
+            for (int i = 0; i < tableModel.getRowCount(); i++) {
+                String nomeConta = (String) tableModel.getValueAt(i, 0);
+                Double valor = (Double) tableModel.getValueAt(i, 1);
+                Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+                Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
 
-            try (Connection conn = DriverManager.getConnection(url);
-                    Statement stmt = conn.createStatement()) {
-                // Criando a tabela caso não exista
-                stmt.execute(createTableSQL);
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                // Verificar se a linha tem dados preenchidos
+                if (nomeConta != null && valor != null && circulante != null && naoCirculante != null) {
+                    // Código para criar a tabela no banco de dados
+                    String createTableSQL = "CREATE TABLE IF NOT EXISTS contaAtivo (\n"
+                            + "    idAtivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                            + "    nomeConta TEXT NOT NULL,\n"
+                            + "    valor REAL NOT NULL,\n"
+                            + "    circulante INTEGER NOT NULL,\n"
+                            + "    naoCirculante INTEGER NOT NULL\n"
+                            + ");";
+
+                    try (Connection conn = DriverManager.getConnection(url);
+                         Statement stmt = conn.createStatement()) {
+                        // Criando a tabela caso não exista
+                        stmt.execute(createTableSQL);
+                    } catch (SQLException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    // Código para inserir os dados no banco de dados
+                    String insertDataSQL = "INSERT INTO contaAtivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
+
+                    try (Connection conn = DriverManager.getConnection(url);
+                         PreparedStatement pstmt = conn.prepareStatement(insertDataSQL)) {
+                        pstmt.setString(1, nomeConta);
+                        pstmt.setDouble(2, valor);
+                        pstmt.setInt(3, circulante ? 1 : 0); // 1 se verdadeiro, 0 se falso
+                        pstmt.setInt(4, naoCirculante ? 1 : 0); // 1 se verdadeiro, 0 se falso
+
+                        // Execute a inserção
+                        pstmt.executeUpdate();
+                    } catch (SQLException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    // Exibir mensagem de sucesso
+                    JOptionPane.showMessageDialog(this, "Dados salvos com sucesso!");
+                }
             }
-            //para inserir os dados na tabela
-            String insertDataSQL = "INSERT INTO contaAtivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
-
-            try (Connection conn = DriverManager.getConnection(url);
-                    PreparedStatement pstmt = conn.prepareStatement(insertDataSQL)) {
-                pstmt.setString(1, nomeConta);
-                pstmt.setDouble(2, valor);
-                pstmt.setInt(3, circulante ? 1 : 0); // 1 se verdadeiro, 0 se falso
-                pstmt.setInt(4, naoCirculante ? 1 : 0); // 1 se verdadeiro, 0 se falso
-
-                // Execute a inserção
-                pstmt.executeUpdate();
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-            //após salvar os dados, exibir uma mensagem de sucesso
-            JOptionPane.showMessageDialog(this, "Dados salvos com sucesso!");
-
         }
-
-
-    }//GEN-LAST:event_botaoSalvarContasActionPerformed
+//GEN-LAST:event_botaoSalvarContasActionPerformed
 
     private void botaoMaisContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisContasActionPerformed
         // TODO add your handling code here:
