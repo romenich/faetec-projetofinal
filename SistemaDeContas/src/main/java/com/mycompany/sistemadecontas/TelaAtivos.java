@@ -190,11 +190,11 @@ public class TelaAtivos extends javax.swing.JFrame {
     private void botaoSalvarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarContasActionPerformed
 
             String url = "jdbc:sqlite:contaativo.db";
-            for (int i = 0; i < tableModel.getRowCount(); i++) {
-                String nomeConta = (String) tableModel.getValueAt(i, 0);
-                Double valor = (Double) tableModel.getValueAt(i, 1);
-                Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-                Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            String nomeConta = (String) tableModel.getValueAt(i, 0);
+            Double valor = (Double) tableModel.getValueAt(i, 1);
+            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
 
                 // Verificar se a linha tem dados preenchidos
                 if (nomeConta != null && valor != null && circulante != null && naoCirculante != null) {
