@@ -47,20 +47,27 @@ public class TelaAtivos extends javax.swing.JFrame {
             }
         });
 
-// Configurar ouvinte para coluna "Não Circulante"
-        TableColumn naoCirculanteColumn = tabelaAtivos.getColumnModel().getColumn(3);
-        naoCirculanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
-        naoCirculanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
+// Configurar ouvinte para coluna "Circulante"
+        circulanteColumn = tabelaAtivos.getColumnModel().getColumn(2);
+        circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+        circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
             @Override
             public void editingStopped(ChangeEvent e) {
                 int row = tabelaAtivos.getSelectedRow();
-                boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
-                boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
 
-                if (naoCirculanteValue) {
-                    tableModel.setValueAt(false, row, 2); // Desmarca "Circulante"
-                } else if (!naoCirculanteValue && !circulanteValue) {
-                    tableModel.setValueAt(true, row, 2); // Marca "Circulante" se nenhum estiver marcado
+                // Adicione a verificação aqui para circulanteValueObject
+                Object circulanteValueObject = tableModel.getValueAt(row, 2);
+                Object naoCirculanteValueObject = tableModel.getValueAt(row, 3);
+
+                if (circulanteValueObject != null && naoCirculanteValueObject != null) {
+                    boolean circulanteValue = (boolean) circulanteValueObject;
+                    boolean naoCirculanteValue = (boolean) naoCirculanteValueObject;
+
+                    if (circulanteValue) {
+                        tableModel.setValueAt(false, row, 3); // Desmarca "Não Circulante"
+                    } else if (!circulanteValue && !naoCirculanteValue) {
+                        tableModel.setValueAt(true, row, 3); // Marca "Não Circulante" se nenhum estiver marcado
+                    }
                 }
             }
 
@@ -69,7 +76,6 @@ public class TelaAtivos extends javax.swing.JFrame {
                 // Não é necessário fazer nada aqui
             }
         });
-
     }
 
     /**
