@@ -46,36 +46,44 @@ public class TelaAtivos extends javax.swing.JFrame {
                 // Não é necessário fazer nada aqui
             }
         });
+        // Configurar ouvinte para coluna "Não Circulante"
+    TableColumn naoCirculanteColumn = tabelaAtivos.getColumnModel().getColumn(3);
 
-// Configurar ouvinte para coluna "Circulante"
-        circulanteColumn = tabelaAtivos.getColumnModel().getColumn(2);
-        circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
-        circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
-            @Override
-            public void editingStopped(ChangeEvent e) {
-                int row = tabelaAtivos.getSelectedRow();
+    naoCirculanteColumn.setCellEditor (
 
-                // Adicione a verificação aqui para circulanteValueObject
-                Object circulanteValueObject = tableModel.getValueAt(row, 2);
-                Object naoCirculanteValueObject = tableModel.getValueAt(row, 3);
+    new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+    naoCirculanteColumn.getCellEditor () 
+        .addCellEditorListener(new CellEditorListener() {
+    @Override
+        public void editingStopped
+        (ChangeEvent e
+        
+            ) {
+        int row = tabelaAtivos.getSelectedRow();
+            boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
+            boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
 
-                if (circulanteValueObject != null && naoCirculanteValueObject != null) {
-                    boolean circulanteValue = (boolean) circulanteValueObject;
-                    boolean naoCirculanteValue = (boolean) naoCirculanteValueObject;
-
-                    if (circulanteValue) {
-                        tableModel.setValueAt(false, row, 3); // Desmarca "Não Circulante"
-                    } else if (!circulanteValue && !naoCirculanteValue) {
-                        tableModel.setValueAt(true, row, 3); // Marca "Não Circulante" se nenhum estiver marcado
-                    }
-                }
+            if (naoCirculanteValue) {
+                tableModel.setValueAt(false, row, 2); // Desmarca "Circulante"
+            } else if (!circulanteValue && !naoCirculanteValue) {
+                tableModel.setValueAt(true, row, 2); // Marca "Circulante" se nenhum estiver marcado
             }
+        }
 
-            @Override
-            public void editingCanceled(ChangeEvent e) {
-                // Não é necessário fazer nada aqui
-            }
-        });
+        @Override
+        public void editingCanceled
+        (ChangeEvent e
+        
+        
+    
+
+    ) {
+        // Não é necessário fazer nada aqui
+    }
+});
+
+
+
     }
 
     /**
@@ -189,51 +197,70 @@ public class TelaAtivos extends javax.swing.JFrame {
 
     private void botaoSalvarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarContasActionPerformed
 
-        String url = "jdbc:sqlite:contaativo.db";
-        for (int i = 0; i < tableModel.getRowCount(); i++) {
-            String nomeConta = (String) tableModel.getValueAt(i, 0);
-            Double valor = (Double) tableModel.getValueAt(i, 1);
-            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+     String url = "jdbc:sqlite:contaativo.db";
 
-            // Verificar se a linha tem dados preenchidos
-            if (nomeConta != null && valor != null && circulante != null && naoCirculante != null) {
-                // Código para criar a tabela no banco de dados
-                String createTableSQL = "CREATE TABLE IF NOT EXISTS contaAtivo (\n"
-                        + "    idAtivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-                        + "    nomeConta TEXT NOT NULL,\n"
-                        + "    valor REAL NOT NULL,\n"
-                        + "    circulante INTEGER NOT NULL,\n"
-                        + "    naoCirculante INTEGER NOT NULL\n"
-                        + ");";
+    for (int i = 0; i < tableModel.getRowCount(); i++) {
+        String nomeConta = (String) tableModel.getValueAt(i, 0);
+        Double valor = (Double) tableModel.getValueAt(i, 1);
+        Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+        Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
 
-                try (Connection conn = DriverManager.getConnection(url);
-                        Statement stmt = conn.createStatement()) {
-                    // Criando a tabela caso não exista
-                    stmt.execute(createTableSQL);
-                } catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                // Código para inserir os dados no banco de dados
-                String insertDataSQL = "INSERT INTO contaAtivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
+        // Verificar se o nome da conta não está vazio (ou seja, se foi inserido)
+        if (nomeConta != null && !nomeConta.trim().isEmpty()) {
+            // Código para criar a tabela no banco de dados (só precisa ser executado uma vez)
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS contaAtivo (\n"
+                    + "    idAtivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                    + "    nomeConta TEXT NOT NULL,\n"
+                    + "    valor REAL NOT NULL,\n"
+                    + "    circulante INTEGER NOT NULL,\n"
+                    + "    naoCirculante INTEGER NOT NULL\n"
+                    + ");";
 
-                try (Connection conn = DriverManager.getConnection(url);
-                        PreparedStatement pstmt = conn.prepareStatement(insertDataSQL)) {
-                    pstmt.setString(1, nomeConta);
-                    pstmt.setDouble(2, valor);
-                    pstmt.setInt(3, circulante ? 1 : 0); // 1 se verdadeiro, 0 se falso
-                    pstmt.setInt(4, naoCirculante ? 1 : 0); // 1 se verdadeiro, 0 se falso
-
-                    // Execute a inserção
-                    pstmt.executeUpdate();
-                } catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                // Exibir mensagem de sucesso
-                JOptionPane.showMessageDialog(this, "Dados salvos com sucesso!");
+            try (Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement()) {
+                // Criando a tabela caso não exista (só será criada uma vez)
+                stmt.execute(createTableSQL);
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
             }
+
+            // Código para inserir os dados no banco de dados
+            String insertDataSQL = "INSERT INTO contaAtivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
+
+                try (Connection conn = DriverManager.getConnection(url); PreparedStatement pstmt = conn.prepareStatement(insertDataSQL)) {
+                pstmt.setString(1, nomeConta);
+                pstmt.setDouble(2, valor);
+
+                // Verifica se a coluna "Circulante" está marcada
+                if (circulante != null && circulante) {
+                    pstmt.setInt(3, 1); // 1 se verdadeiro
+                } else {
+                    pstmt.setInt(3, 0); // 0 se falso ou não marcado
+                }
+
+                // Verifica se a coluna "Não Circulante" está marcada
+                if (naoCirculante != null && naoCirculante) {
+                    pstmt.setInt(4, 1); // 1 se verdadeiro
+                } else {
+                    pstmt.setInt(4, 0); // 0 se falso ou não marcado
+                }
+
+                // Execute a inserção
+                pstmt.executeUpdate();
+            } catch (SQLException e) {s
+                System.out.println(e.getMessage());
+            }
+
+            // Exibir mensagem de sucesso para cada linha inserida
+            JOptionPane.showMessageDialog(this, "Dados salvos com sucesso para a conta: " + nomeConta);
         }
     }
+}
+
+
+
+
+
+
 //GEN-LAST:event_botaoSalvarContasActionPerformed
 
     private void botaoMaisContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisContasActionPerformed
