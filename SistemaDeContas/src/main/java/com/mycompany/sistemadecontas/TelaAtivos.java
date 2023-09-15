@@ -246,7 +246,7 @@ public class TelaAtivos extends javax.swing.JFrame {
 
                 // Execute a inserção
                 pstmt.executeUpdate();
-            } catch (SQLException e) {s
+            } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
 
