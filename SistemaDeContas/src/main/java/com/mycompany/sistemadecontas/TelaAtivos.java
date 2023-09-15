@@ -43,7 +43,7 @@ public class TelaAtivos extends javax.swing.JFrame {
 
             @Override
             public void editingCanceled(ChangeEvent e) {
-                // Não é necessário fazer nada aqui
+                // Não é necessário fazer nada aqui, manter vazio
             }
         });
         // Configurar ouvinte para coluna "Não Circulante"
@@ -78,7 +78,7 @@ public class TelaAtivos extends javax.swing.JFrame {
     
 
     ) {
-        // Não é necessário fazer nada aqui
+        // Não é necessário fazer nada aqui, manter vazio
     }
 });
 
