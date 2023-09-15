@@ -5,71 +5,71 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author reydemonio
  */
 public class TelaPassivos extends javax.swing.JFrame {
-     private final DefaultTableModel tableModel;
 
-     
+    private final DefaultTableModel tableModel;
 
     /**
      * Creates new form TelaPassivos
      */
     public TelaPassivos() {
         initComponents();
-         // Inicialização do modelo da tabela
+        // Inicialização do modelo da tabela
         tableModel = (DefaultTableModel) tabelaPassivos.getModel();
 
-                    // Configurar ouvinte para coluna "Circulante"
-            TableColumn circulanteColumn = tabelaPassivos.getColumnModel().getColumn(2);
-            circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
-            circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
-                @Override
-                public void editingStopped(ChangeEvent e) {
-                    int row = tabelaPassivos.getSelectedRow();
-                    boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
-                    boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
+        // Configurar ouvinte para coluna "Circulante"
+        TableColumn circulanteColumn = tabelaPassivos.getColumnModel().getColumn(2);
+        circulanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+        circulanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
+            @Override
+            public void editingStopped(ChangeEvent e) {
+                int row = tabelaPassivos.getSelectedRow();
+                boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
+                boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
 
-                    if (circulanteValue) {
-                        tableModel.setValueAt(false, row, 3); // Desmarca "Não Circulante"
-                    } else if (!circulanteValue && !naoCirculanteValue) {
-                        tableModel.setValueAt(true, row, 3); // Marca "Não Circulante" se nenhum estiver marcado
-                    }
+                if (circulanteValue) {
+                    tableModel.setValueAt(false, row, 3); // Desmarca "Não Circulante"
+                } else if (!circulanteValue && !naoCirculanteValue) {
+                    tableModel.setValueAt(true, row, 3); // Marca "Não Circulante" se nenhum estiver marcado
                 }
+            }
 
-                @Override
-                public void editingCanceled(ChangeEvent e) {
-                    // Não é necessário fazer nada aqui
+            @Override
+            public void editingCanceled(ChangeEvent e) {
+                // Não é necessário fazer nada aqui
+            }
+        });
+
+        // Configurar ouvinte para coluna "Não Circulante"
+        TableColumn naoCirculanteColumn = tabelaPassivos.getColumnModel().getColumn(3);
+        naoCirculanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
+        naoCirculanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
+            @Override
+            public void editingStopped(ChangeEvent e) {
+                int row = tabelaPassivos.getSelectedRow();
+                boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
+                boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
+
+                if (naoCirculanteValue) {
+                    tableModel.setValueAt(false, row, 2); // Desmarca "Circulante"
+                } else if (!naoCirculanteValue && !circulanteValue) {
+                    tableModel.setValueAt(true, row, 2); // Marca "Circulante" se nenhum estiver marcado
                 }
-            });
+            }
 
-            // Configurar ouvinte para coluna "Não Circulante"
-            TableColumn naoCirculanteColumn = tabelaPassivos.getColumnModel().getColumn(3);
-            naoCirculanteColumn.setCellEditor(new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()));
-            naoCirculanteColumn.getCellEditor().addCellEditorListener(new CellEditorListener() {
-                @Override
-                public void editingStopped(ChangeEvent e) {
-                    int row = tabelaPassivos.getSelectedRow();
-                    boolean circulanteValue = (boolean) tableModel.getValueAt(row, 2);
-                    boolean naoCirculanteValue = (boolean) tableModel.getValueAt(row, 3);
+            @Override
+            public void editingCanceled(ChangeEvent e) {
+                // Não é necessário fazer nada aqui
+            }
+        });
 
-                    if (naoCirculanteValue) {
-                        tableModel.setValueAt(false, row, 2); // Desmarca "Circulante"
-                    } else if (!naoCirculanteValue && !circulanteValue) {
-                        tableModel.setValueAt(true, row, 2); // Marca "Circulante" se nenhum estiver marcado
-                    }
-                }
-
-                @Override
-                public void editingCanceled(ChangeEvent e) {
-                    // Não é necessário fazer nada aqui
-                }
-            });
-
-                }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -185,18 +185,65 @@ public class TelaPassivos extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoSalvarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarContasActionPerformed
-        // TODO add your handling code here:
-                                                       
-        for (int i = 0; i < tableModel.getRowCount(); i++) {
-            String nomeConta = (String) tableModel.getValueAt(i, 0);
-            Double valor = (Double) tableModel.getValueAt(i, 1);
-            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+        String url = "jdbc:sqlite:contapassivo.db";
 
-            
-}
+    for (int i = 0; i < tableModel.getRowCount(); i++) {
+        String nomeConta = (String) tableModel.getValueAt(i, 0);
+        Double valor = (Double) tableModel.getValueAt(i, 1);
+        Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+        Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
 
-        
+        // Verificar se o nome da conta não está vazio (ou seja, se foi inserido)
+        if (nomeConta != null && !nomeConta.trim().isEmpty()) {
+            // Código para criar a tabela no banco de dados (só precisa ser executado uma vez)
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS contaPassivo (\n"
+                    + "    idPassivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                    + "    nomeConta TEXT NOT NULL,\n"
+                    + "    valor REAL NOT NULL,\n"
+                    + "    circulante INTEGER NOT NULL,\n"
+                    + "    naoCirculante INTEGER NOT NULL\n"
+                    + ");";
+
+            try (Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement()) {
+                // Criando a tabela caso não exista (só será criada uma vez)
+                stmt.execute(createTableSQL);
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+
+            // Código para inserir os dados no banco de dados
+            String insertDataSQL = "INSERT INTO contaPassivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
+
+                try (Connection conn = DriverManager.getConnection(url); PreparedStatement pstmt = conn.prepareStatement(insertDataSQL)) {
+                pstmt.setString(1, nomeConta);
+                pstmt.setDouble(2, valor);
+
+                // Verifica se a coluna "Circulante" está marcada
+                if (circulante != null && circulante) {
+                    pstmt.setInt(3, 1); // 1 se verdadeiro
+                } else {
+                    pstmt.setInt(3, 0); // 0 se falso ou não marcado
+                }
+
+                // Verifica se a coluna "Não Circulante" está marcada
+                if (naoCirculante != null && naoCirculante) {
+                    pstmt.setInt(4, 1); // 1 se verdadeiro
+                } else {
+                    pstmt.setInt(4, 0); // 0 se falso ou não marcado
+                }
+
+                // Execute a inserção
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+
+            // Exibir mensagem de sucesso para cada linha inserida
+            JOptionPane.showMessageDialog(this, "Dados salvos com sucesso para a conta: " + nomeConta);
+        }
+    }
+
+
     }//GEN-LAST:event_botaoSalvarContasActionPerformed
 
     private void botaoMaisContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisContasActionPerformed
@@ -220,16 +267,28 @@ public class TelaPassivos extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPassivos.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaPassivos.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaPassivos.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaPassivos.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
