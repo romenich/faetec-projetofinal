@@ -21,6 +21,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         this.telaAtivos = telaAtivos;
         this.telaPassivos = telaPassivos;
         initComponents();
+        
     }
 
     /**

@@ -1,6 +1,5 @@
 package com.mycompany.sistemadecontas;
 
-
 /**
  *
  * @author romenik
@@ -114,20 +113,20 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         TelaAtivos newFrame = new TelaAtivos();
         newFrame.setVisible(true);
         dispose();
-        
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void botaoRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRelatorioActionPerformed
         //criando instancias das classes TelaAtivos e TelaPassivos
         TelaAtivos telaAtivos = new TelaAtivos();
         TelaPassivos telaPassivos = new TelaPassivos();
-        
-        // chame os métodos de cálculo
+
+        // Chame os métodos de cálculo
         double totalAtivos = telaAtivos.calcularTotalAtivos();
         double totalPassivos = telaPassivos.calcularTotalPassivos();
-        
-        
-        TelaRelatorios newFrame = new TelaRelatorios();
+
+        // Crie uma instância de TelaRelatorios passando os valores
+        TelaRelatorios newFrame = new TelaRelatorios(totalAtivos, totalPassivos);
         newFrame.setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoRelatorioActionPerformed
