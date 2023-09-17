@@ -80,6 +80,9 @@ public class TelaAtivos extends javax.swing.JFrame {
     ) {
         // Não é necessário fazer nada aqui, manter vazio
     }
+        //método para calcular o total de ativos
+        private double calcularTotalAtivos(){
+        }
 });
 
 
