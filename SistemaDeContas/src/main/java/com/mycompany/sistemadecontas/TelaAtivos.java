@@ -82,7 +82,23 @@ public class TelaAtivos extends javax.swing.JFrame {
     }
         //método para calcular o total de ativos
         private double calcularTotalAtivos(){
+            double totalAtivos = 0.0;
+            for (int i = 0; i < tableModel.getRowCount(); i++){
+            Double valor = (Double) tableModel.getValueAt(i, 1);
+            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+            
+            if (valor != null){
+            if (circulante != null && circulante){
+                totalAtivos += valor;}
+            else if (naoCirculante != null && naoCirculante ){
+                totalAtivos+= valor;}
+            }
+            }
+            return totalAtivos;
         }
+        
+        
 });
 
 
