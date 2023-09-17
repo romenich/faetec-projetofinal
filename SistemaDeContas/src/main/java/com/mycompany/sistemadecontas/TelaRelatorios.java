@@ -10,11 +10,16 @@ package com.mycompany.sistemadecontas;
  * @author FAETEC-PÁDUA
  */
 public class TelaRelatorios extends javax.swing.JFrame {
+    private TelaAtivos telaAtivos;
+    private TelaPassivos telaPassivos;
+    
 
     /**
      * Creates new form TelaRelatorios
      */
-    public TelaRelatorios() {
+    public TelaRelatorios(TelaAtivos telaAtivos, TelaPassivos telaPassivos) {
+        this.telaAtivos = telaAtivos;
+        this.telaPassivos = telaPassivos;
         initComponents();
     }
 
@@ -90,11 +95,11 @@ public class TelaRelatorios extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaRelatorios().setVisible(true);
-            }
-        });
+        //java.awt.EventQueue.invokeLater(new Runnable() {
+         //   public void run() {
+        //        new TelaRelatorios().setVisible(true);
+        //    }
+      //  });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

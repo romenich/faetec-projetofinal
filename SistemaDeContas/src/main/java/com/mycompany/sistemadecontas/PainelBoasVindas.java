@@ -118,7 +118,15 @@ public class PainelBoasVindas extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void botaoRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRelatorioActionPerformed
-        // TODO add your handling code here:
+        //criando instancias das classes TelaAtivos e TelaPassivos
+        TelaAtivos telaAtivos = new TelaAtivos();
+        TelaPassivos telaPassivos = new TelaPassivos();
+        
+        // chame os métodos de cálculo
+        double totalAtivos = telaAtivos.calcularTotalAtivos();
+        double totalPassivos = telaPassivos.calcularTotalPassivos();
+        
+        
         TelaRelatorios newFrame = new TelaRelatorios();
         newFrame.setVisible(true);
         dispose();
