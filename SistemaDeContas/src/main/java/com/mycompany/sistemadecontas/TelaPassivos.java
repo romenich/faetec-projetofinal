@@ -67,6 +67,25 @@ public class TelaPassivos extends javax.swing.JFrame {
             public void editingCanceled(ChangeEvent e) {
                 // Não é necessário fazer nada aqui
             }
+
+            //método para calcular o total de passivos
+            private double calcularTotalPassivos() {
+                double totalPassivos = 0.0;
+                for (int i = 0; i < tableModel.getRowCount(); i++) {
+                    Double valor = (Double) tableModel.getValueAt(i, 1);
+                    Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+                    Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+
+                    if (valor != null) {
+                        if (circulante != null && circulante) {
+                            totalPassivos += valor;
+                        } else if (naoCirculante != null && naoCirculante) {
+                            totalPassivos += valor;
+                        }
+                    }
+                }
+                return totalPassivos;
+            }
         });
 
     }
@@ -187,61 +206,61 @@ public class TelaPassivos extends javax.swing.JFrame {
     private void botaoSalvarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarContasActionPerformed
         String url = "jdbc:sqlite:contapassivo.db";
 
-    for (int i = 0; i < tableModel.getRowCount(); i++) {
-        String nomeConta = (String) tableModel.getValueAt(i, 0);
-        Double valor = (Double) tableModel.getValueAt(i, 1);
-        Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-        Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            String nomeConta = (String) tableModel.getValueAt(i, 0);
+            Double valor = (Double) tableModel.getValueAt(i, 1);
+            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
 
-        // Verificar se o nome da conta não está vazio (ou seja, se foi inserido)
-        if (nomeConta != null && !nomeConta.trim().isEmpty()) {
-            // Código para criar a tabela no banco de dados (só precisa ser executado uma vez)
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS contaPassivo (\n"
-                    + "    idPassivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-                    + "    nomeConta TEXT NOT NULL,\n"
-                    + "    valor REAL NOT NULL,\n"
-                    + "    circulante INTEGER NOT NULL,\n"
-                    + "    naoCirculante INTEGER NOT NULL\n"
-                    + ");";
+            // Verificar se o nome da conta não está vazio (ou seja, se foi inserido)
+            if (nomeConta != null && !nomeConta.trim().isEmpty()) {
+                // Código para criar a tabela no banco de dados (só precisa ser executado uma vez)
+                String createTableSQL = "CREATE TABLE IF NOT EXISTS contaPassivo (\n"
+                        + "    idPassivo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                        + "    nomeConta TEXT NOT NULL,\n"
+                        + "    valor REAL NOT NULL,\n"
+                        + "    circulante INTEGER NOT NULL,\n"
+                        + "    naoCirculante INTEGER NOT NULL\n"
+                        + ");";
 
-            try (Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement()) {
-                // Criando a tabela caso não exista (só será criada uma vez)
-                stmt.execute(createTableSQL);
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
+                try (Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement()) {
+                    // Criando a tabela caso não exista (só será criada uma vez)
+                    stmt.execute(createTableSQL);
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
 
-            // Código para inserir os dados no banco de dados
-            String insertDataSQL = "INSERT INTO contaPassivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
+                // Código para inserir os dados no banco de dados
+                String insertDataSQL = "INSERT INTO contaPassivo (nomeConta, valor, circulante, naoCirculante) VALUES (?, ?, ?, ?)";
 
                 try (Connection conn = DriverManager.getConnection(url); PreparedStatement pstmt = conn.prepareStatement(insertDataSQL)) {
-                pstmt.setString(1, nomeConta);
-                pstmt.setDouble(2, valor);
+                    pstmt.setString(1, nomeConta);
+                    pstmt.setDouble(2, valor);
 
-                // Verifica se a coluna "Circulante" está marcada
-                if (circulante != null && circulante) {
-                    pstmt.setInt(3, 1); // 1 se verdadeiro
-                } else {
-                    pstmt.setInt(3, 0); // 0 se falso ou não marcado
+                    // Verifica se a coluna "Circulante" está marcada
+                    if (circulante != null && circulante) {
+                        pstmt.setInt(3, 1); // 1 se verdadeiro
+                    } else {
+                        pstmt.setInt(3, 0); // 0 se falso ou não marcado
+                    }
+
+                    // Verifica se a coluna "Não Circulante" está marcada
+                    if (naoCirculante != null && naoCirculante) {
+                        pstmt.setInt(4, 1); // 1 se verdadeiro
+                    } else {
+                        pstmt.setInt(4, 0); // 0 se falso ou não marcado
+                    }
+
+                    // Execute a inserção
+                    pstmt.executeUpdate();
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
                 }
 
-                // Verifica se a coluna "Não Circulante" está marcada
-                if (naoCirculante != null && naoCirculante) {
-                    pstmt.setInt(4, 1); // 1 se verdadeiro
-                } else {
-                    pstmt.setInt(4, 0); // 0 se falso ou não marcado
-                }
-
-                // Execute a inserção
-                pstmt.executeUpdate();
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                // Exibir mensagem de sucesso para cada linha inserida
+                JOptionPane.showMessageDialog(this, "Dados salvos com sucesso para a conta: " + nomeConta);
             }
-
-            // Exibir mensagem de sucesso para cada linha inserida
-            JOptionPane.showMessageDialog(this, "Dados salvos com sucesso para a conta: " + nomeConta);
         }
-    }
 
 
     }//GEN-LAST:event_botaoSalvarContasActionPerformed
@@ -268,27 +287,23 @@ public class TelaPassivos extends javax.swing.JFrame {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class  
+            java.util.logging.Logger.getLogger(TelaPassivos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaPassivos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class  
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaPassivos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPassivos.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaPassivos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
