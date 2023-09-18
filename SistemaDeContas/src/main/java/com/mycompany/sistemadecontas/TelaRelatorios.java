@@ -17,17 +17,8 @@ public class TelaRelatorios extends javax.swing.JFrame {
     /**
      * Creates new form TelaRelatorios
      */
-    public TelaRelatorios(TelaAtivos telaAtivos, TelaPassivos telaPassivos) {
-        this.telaAtivos = telaAtivos;
-        this.telaPassivos = telaPassivos;
-        initComponents();
-        // Calcular os totais de ativos e passivos
-        double totalAtivos = telaAtivos.calcularTotalAtivos();
-        double totalPassivos = telaPassivos.calcularTotalPassivos();
-
-        // Definir o texto dos rótulos com os valores calculados
-        totalAtivosLabel.setText("Total de Ativos: " + totalAtivos);
-        totalPassivosLabel.setText("Total de Passivos: " + totalPassivos);
+    public TelaRelatorios() {
+      
 
     }
 
@@ -111,11 +102,11 @@ public class TelaRelatorios extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-        //   public void run() {
-        //        new TelaRelatorios().setVisible(true);
-        //    }
-        //  });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+           public void run() {
+                new TelaRelatorios().setVisible(true);
+            }
+          });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
