@@ -15,25 +15,6 @@ public class TelaAtivos extends javax.swing.JFrame {
 
     private final DefaultTableModel tableModel;
 
-    //método para calcular o total de ativos
-    public double calcularTotalAtivos() {
-        double totalAtivos = 0.0;
-        for (int i = 0; i < tableModel.getRowCount(); i++) {
-            Double valor = (Double) tableModel.getValueAt(i, 1);
-            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
-
-            if (valor != null) {
-                if (circulante != null && circulante) {
-                    totalAtivos += valor;
-                } else if (naoCirculante != null && naoCirculante) {
-                    totalAtivos += valor;
-                }
-            }
-        }
-        return totalAtivos;
-    }
-
     /**
      * Creates new form TelaAtivos
      */
@@ -197,6 +178,22 @@ public class TelaAtivos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //método para calcular o total de ativos
+    public double calcularTotalAtivos() {
+      double totalAtivos = 0.0;
+    int valorColumnIndex = 1; // Índice da coluna de valor
+
+    for (int i = 0; i < tableModel.getRowCount(); i++) {
+        Double valor = (Double) tableModel.getValueAt(i, valorColumnIndex);
+
+        if (valor != null) {
+            totalAtivos += valor;
+        }
+    }
+    
+    return totalAtivos;
+}
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
