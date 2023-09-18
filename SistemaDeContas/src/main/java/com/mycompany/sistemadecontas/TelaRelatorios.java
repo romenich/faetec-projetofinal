@@ -17,7 +17,10 @@ public class TelaRelatorios extends javax.swing.JFrame {
     /**
      * Creates new form TelaRelatorios
      */
-    public TelaRelatorios() {
+    public TelaRelatorios(double totalAtivos, double totalPassivos) {
+        initComponents();
+        totalAtivosLabel.setText("Total de Ativos: "+totalAtivos);
+        totalPassivosLabel.setText("Total de Passivos: "+totalPassivos);
       
 
     }
@@ -35,6 +38,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         botaoVoltar = new javax.swing.JButton();
         totalAtivosLabel = new javax.swing.JLabel();
         totalPassivosLabel = new javax.swing.JLabel();
+        patrimonioLiquidoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Relatórios");
@@ -63,6 +67,9 @@ public class TelaRelatorios extends javax.swing.JFrame {
 
         totalPassivosLabel.setText("jLabel2");
         getContentPane().add(totalPassivosLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 890, 80));
+
+        patrimonioLiquidoLabel.setText("jLabel1");
+        getContentPane().add(patrimonioLiquidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 860, 90));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -102,15 +109,16 @@ public class TelaRelatorios extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-           public void run() {
-                new TelaRelatorios().setVisible(true);
-            }
-          });
+        //java.awt.EventQueue.invokeLater(new Runnable() {
+         //  public void run() {
+         //       new TelaRelatorios().setVisible(true);
+        //    }
+       //   });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoVoltar;
+    private javax.swing.JLabel patrimonioLiquidoLabel;
     private javax.swing.JLabel relatoriosLABEL;
     private javax.swing.JLabel totalAtivosLabel;
     private javax.swing.JLabel totalPassivosLabel;

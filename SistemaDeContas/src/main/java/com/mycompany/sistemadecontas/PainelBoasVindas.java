@@ -127,7 +127,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         double totalAtivos = telaAtivos.calcularTotalAtivos();
         double totalPassivos = telaPassivos.calcularTotalPassivos();
 
-        // Crie uma instância de TelaRelatorios passando os valores
+        // Atualize a tela de relatórios com os valores calculados
         TelaRelatorios newFrame = new TelaRelatorios(totalAtivos, totalPassivos);
         newFrame.setVisible(true);
         dispose();
