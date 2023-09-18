@@ -1,4 +1,6 @@
 package com.mycompany.sistemadecontas;
+import com.mycompany.sistemadecontas.TelaAtivos;
+import com.mycompany.sistemadecontas.TelaPassivos;
 
 /**
  *

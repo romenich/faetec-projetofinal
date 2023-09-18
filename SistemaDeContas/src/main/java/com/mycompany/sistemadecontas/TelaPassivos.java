@@ -15,6 +15,25 @@ public class TelaPassivos extends javax.swing.JFrame {
 
     private final DefaultTableModel tableModel;
 
+    //método para calcular o total de passivos
+    public double calcularTotalPassivos() {
+        double totalPassivos = 0.0;
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            Double valor = (Double) tableModel.getValueAt(i, 1);
+            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
+            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
+
+            if (valor != null) {
+                if (circulante != null && circulante) {
+                    totalPassivos += valor;
+                } else if (naoCirculante != null && naoCirculante) {
+                    totalPassivos += valor;
+                }
+            }
+        }
+        return totalPassivos;
+    }
+
     /**
      * Creates new form TelaPassivos
      */
@@ -68,24 +87,6 @@ public class TelaPassivos extends javax.swing.JFrame {
                 // Não é necessário fazer nada aqui
             }
 
-            //método para calcular o total de passivos
-            private double calcularTotalPassivos() {
-                double totalPassivos = 0.0;
-                for (int i = 0; i < tableModel.getRowCount(); i++) {
-                    Double valor = (Double) tableModel.getValueAt(i, 1);
-                    Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-                    Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
-
-                    if (valor != null) {
-                        if (circulante != null && circulante) {
-                            totalPassivos += valor;
-                        } else if (naoCirculante != null && naoCirculante) {
-                            totalPassivos += valor;
-                        }
-                    }
-                }
-                return totalPassivos;
-            }
         });
 
     }
