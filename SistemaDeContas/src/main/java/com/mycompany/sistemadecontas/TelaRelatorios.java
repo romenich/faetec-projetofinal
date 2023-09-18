@@ -17,10 +17,11 @@ public class TelaRelatorios extends javax.swing.JFrame {
     /**
      * Creates new form TelaRelatorios
      */
-    public TelaRelatorios(double totalAtivos, double totalPassivos) {
+    public TelaRelatorios(double totalAtivos, double totalPassivos, double patrimonioLiquido) {
         initComponents();
         totalAtivosLabel.setText("Total de Ativos: "+totalAtivos);
         totalPassivosLabel.setText("Total de Passivos: "+totalPassivos);
+        patrimonioLiquidoLabel.setText("Patrimônio Líquido: " + patrimonioLiquido);
       
 
     }

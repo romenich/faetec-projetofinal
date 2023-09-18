@@ -126,9 +126,11 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         // Chame os métodos de cálculo
         double totalAtivos = telaAtivos.calcularTotalAtivos();
         double totalPassivos = telaPassivos.calcularTotalPassivos();
+        // calculo do patrimonio liquido
+        double patrimonioLiquido = totalAtivos - totalPassivos;
 
-        // Atualize a tela de relatórios com os valores calculados
-        TelaRelatorios newFrame = new TelaRelatorios(totalAtivos, totalPassivos);
+       // Atualizar a tela de relatórios com os valores calculados
+        TelaRelatorios newFrame = new TelaRelatorios(totalAtivos, totalPassivos, patrimonioLiquido);
         newFrame.setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoRelatorioActionPerformed
