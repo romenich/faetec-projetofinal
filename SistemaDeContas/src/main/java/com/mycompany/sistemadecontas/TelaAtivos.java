@@ -179,21 +179,6 @@ public class TelaAtivos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //método para calcular o total de ativos
-    public double calcularTotalAtivos() {
-      double totalAtivos = 0.0;
-    int valorColumnIndex = 1; // Índice da coluna de valor
-
-    for (int i = 0; i < tableModel.getRowCount(); i++) {
-        Double valor = (Double) tableModel.getValueAt(i, valorColumnIndex);
-
-        if (valor != null) {
-            totalAtivos += valor;
-        }
-    }
-    
-    return totalAtivos;
-}
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
@@ -263,7 +248,24 @@ public class TelaAtivos extends javax.swing.JFrame {
         }
     }
 
+    //método para calcular o total de ativos
+    public double calcularTotalAtivos() {
+        double totalAtivos = 0.0;
+        int valorColumnIndex = 1; // Índice da coluna de valor
 
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            Double valor = (Double) tableModel.getValueAt(i, valorColumnIndex);
+
+            if (valor != null) {
+                System.out.println("Valor lido: " + valor); // Adicione esta linha para depuração
+                totalAtivos += valor;
+            }
+        }
+
+        System.out.println("Total de Ativos: " + totalAtivos); // Adicione esta linha para depuração
+
+        return totalAtivos;
+    }
 //GEN-LAST:event_botaoSalvarContasActionPerformed
 
     private void botaoMaisContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisContasActionPerformed
