@@ -10,7 +10,11 @@ package com.mycompany.sistemadecontas;
  */
 public class SistemaDeContas {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+ public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PaginaPrincipal().setVisible(true);
+            }
+        });
     }
 }
