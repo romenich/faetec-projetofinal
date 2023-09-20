@@ -178,24 +178,6 @@ public class TelaPassivos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    //método para calcular o total de passivos
-    public double calcularTotalPassivos() {
-        double totalPassivos = 0.0;
-        for (int i = 0; i < tableModel.getRowCount(); i++) {
-            Double valor = (Double) tableModel.getValueAt(i, 1);
-            Boolean circulante = (Boolean) tableModel.getValueAt(i, 2);
-            Boolean naoCirculante = (Boolean) tableModel.getValueAt(i, 3);
-
-            if (valor != null) {
-                if (circulante != null && circulante) {
-                    totalPassivos += valor;
-                } else if (naoCirculante != null && naoCirculante) {
-                    totalPassivos += valor;
-                }
-            }
-        }
-        return totalPassivos;
-    }
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
@@ -265,6 +247,23 @@ public class TelaPassivos extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_botaoSalvarContasActionPerformed
+
+    //método para calcular o total de passivos
+    public double calcularTotalPassivos() {
+        double totalPassivo = 0.0;
+        String url = "jdbc:sqlite:contapassivo.db"; // Substitua pelo nome correto do seu banco de dados
+
+        try (Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("SELECT SUM(valor) AS total FROM contaPassivo")) {
+
+            if (rs.next()) {
+                totalPassivo = rs.getDouble("total");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return totalPassivo;
+    }
 
     private void botaoMaisContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisContasActionPerformed
         // TODO add your handling code here:
