@@ -177,6 +177,7 @@ public class TelaAtivos extends javax.swing.JFrame {
         getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 

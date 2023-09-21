@@ -73,6 +73,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         getContentPane().add(patrimonioLiquidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 860, 90));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed

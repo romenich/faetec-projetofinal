@@ -148,6 +148,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(cadastroBOTAO, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioActionPerformed

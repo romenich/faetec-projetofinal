@@ -101,6 +101,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, 50));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
