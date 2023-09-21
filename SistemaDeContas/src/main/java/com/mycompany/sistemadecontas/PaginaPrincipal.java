@@ -52,10 +52,10 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         campoUsuario = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
         botaoEntrar = new javax.swing.JButton();
-        botaoLimpar = new javax.swing.JButton();
-        botaoSobre = new javax.swing.JButton();
         painelSoftware = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        botaoLimpar = new javax.swing.JButton();
+        botaoSobre = new javax.swing.JButton();
         cadastroBOTAO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,24 +93,6 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, -1, -1));
 
-        botaoLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoLimpar.setText("Limpar ");
-        botaoLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoLimparActionPerformed(evt);
-            }
-        });
-        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
-
-        botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoSobre.setText("Sobre");
-        botaoSobre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSobreActionPerformed(evt);
-            }
-        });
-        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
-
         painelSoftware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel3.setFont(new java.awt.Font("Source Code Pro", 1, 36)); // NOI18N
@@ -134,7 +116,25 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
         );
 
-        getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 810, 130));
+        getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 810, 130));
+
+        botaoLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        botaoLimpar.setText("Limpar ");
+        botaoLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLimparActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
+
+        botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        botaoSobre.setText("Sobre");
+        botaoSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSobreActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         cadastroBOTAO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cadastroBOTAO.setText("Cadastrar");
