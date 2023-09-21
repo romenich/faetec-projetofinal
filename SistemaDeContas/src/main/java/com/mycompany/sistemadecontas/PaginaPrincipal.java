@@ -53,14 +53,12 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         campoSenha = new javax.swing.JPasswordField();
         botaoEntrar = new javax.swing.JButton();
         botaoLimpar = new javax.swing.JButton();
+        botaoSobre = new javax.swing.JButton();
         painelSoftware = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        botaoSobre = new javax.swing.JButton();
         cadastroBOTAO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1093, 614));
-        setPreferredSize(new java.awt.Dimension(1093, 614));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -104,6 +102,15 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
 
+        botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        botaoSobre.setText("Sobre");
+        botaoSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSobreActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+
         painelSoftware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel3.setFont(new java.awt.Font("Source Code Pro", 1, 36)); // NOI18N
@@ -129,15 +136,6 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 810, 130));
 
-        botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoSobre.setText("Sobre");
-        botaoSobre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSobreActionPerformed(evt);
-            }
-        });
-        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
-
         cadastroBOTAO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cadastroBOTAO.setText("Cadastrar");
         cadastroBOTAO.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +146,6 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(cadastroBOTAO, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioActionPerformed
@@ -197,16 +194,6 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         }
     }
 //GEN-LAST:event_botaoEntrarActionPerformed
-
-    private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
-        // TODO add your handling code here:
-        //setando o texto para uma variável vazia a fim de limpar os campos
-
-        campoUsuario.setText("");
-        campoSenha.setText("");
-
-
-    }//GEN-LAST:event_botaoLimparActionPerformed
 
     private void botaoSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSobreActionPerformed
         // TODO add your handling code here:
@@ -265,6 +252,15 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoSenhaActionPerformed
+
+    private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
+        // TODO add your handling code here:
+        //setando o texto para uma variável vazia a fim de limpar os campos
+
+        campoUsuario.setText("");
+        campoSenha.setText("");
+
+    }//GEN-LAST:event_botaoLimparActionPerformed
 
     /**
      * @param args the command line arguments
