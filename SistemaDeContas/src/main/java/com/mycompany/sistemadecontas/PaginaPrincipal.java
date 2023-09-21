@@ -211,7 +211,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void botaoSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSobreActionPerformed
         // TODO add your handling code here:
         // curta mensagem explicando do que se trata o software
-        String mensagem = "Esse software é um Sistema de Controle Patrimonial,\n"
+        String mensagem = "Esse software serve para calcular o Patrimônio Líquido de uma empresa,\n"
                 + "e foi desenvolvido para o Projeto Final do curso Técnico em Informática,\n"
                 + "da Faetec de Santo Antônio de Pádua - RJ.";
         JOptionPane.showMessageDialog(this, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);
