@@ -125,7 +125,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoLimparActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
+        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 500, -1, -1));
 
         botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoSobre.setText("Sobre");
@@ -134,7 +134,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoSobreActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, -1, -1));
 
         cadastroBOTAO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cadastroBOTAO.setText("Cadastrar");
