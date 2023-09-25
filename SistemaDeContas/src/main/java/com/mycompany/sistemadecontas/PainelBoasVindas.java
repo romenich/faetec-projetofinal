@@ -30,6 +30,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
         botaoRelatorio = new javax.swing.JButton();
+        limparTabelasBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
@@ -89,7 +90,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 botaoVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, -1, -1));
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
 
         botaoRelatorio.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         botaoRelatorio.setText("Gerar Relatórios");
@@ -99,6 +100,10 @@ public class PainelBoasVindas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, 50));
+
+        limparTabelasBTN.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        limparTabelasBTN.setText("Limpar dados salvos");
+        getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 510, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -185,5 +190,6 @@ public class PainelBoasVindas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton limparTabelasBTN;
     // End of variables declaration//GEN-END:variables
 }
