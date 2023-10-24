@@ -99,7 +99,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Source Code Pro", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel3.setText("Sistema de Controle Patrimonial");
+        jLabel3.setText("      Sistema de Controle Patrimonial");
 
         javax.swing.GroupLayout painelSoftwareLayout = new javax.swing.GroupLayout(painelSoftware);
         painelSoftware.setLayout(painelSoftwareLayout);
