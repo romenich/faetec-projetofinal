@@ -1,7 +1,9 @@
 package com.mycompany.sistemadecontas;
+
 import com.mycompany.sistemadecontas.TelaAtivos;
 import com.mycompany.sistemadecontas.TelaPassivos;
-
+import java.io.File;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +33,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
         botaoRelatorio = new javax.swing.JButton();
+        limparTabelasBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
@@ -90,7 +93,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 botaoVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
         botaoRelatorio.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         botaoRelatorio.setText("Gerar Relatórios");
@@ -100,6 +103,15 @@ public class PainelBoasVindas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, 50));
+
+        limparTabelasBTN.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        limparTabelasBTN.setText("Apagar dados salvos");
+        limparTabelasBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparTabelasBTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 510, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -131,7 +143,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         // calculo do patrimonio liquido
         double patrimonioLiquido = totalAtivos - totalPassivos;
 
-       // Atualizar a tela de relatórios com os valores calculados
+        // Atualizar a tela de relatórios com os valores calculados
         TelaRelatorios newFrame = new TelaRelatorios(totalAtivos, totalPassivos, patrimonioLiquido);
         newFrame.setVisible(true);
         dispose();
@@ -143,6 +155,28 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         newFrame.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void limparTabelasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparTabelasBTNActionPerformed
+        // TODO add your handling code here:
+        // Especifique o caminho dos arquivos dos bancos de dados a serem apagados
+        String caminhoContaAtivoDB = "C:\\Users\\FAETEC-PÁDUA\\faetec-projetofinal\\SistemaDeContas\\contaativo.db";
+        String caminhoContaPassivoDB = "C:\\Users\\FAETEC-PÁDUA\\faetec-projetofinal\\SistemaDeContas\\contapassivo.db";
+
+        // Apagar o banco de dados contaativo.db
+        File arquivoContaAtivoDB = new File(caminhoContaAtivoDB);
+        if (arquivoContaAtivoDB.exists()) {
+            arquivoContaAtivoDB.delete();
+        }
+
+        // Apagar o banco de dados contapassivo.db
+        File arquivoContaPassivoDB = new File(caminhoContaPassivoDB);
+        if (arquivoContaPassivoDB.exists()) {
+            arquivoContaPassivoDB.delete();
+        }
+
+        String mensagem = "As contas da tabela foram apagadas com sucesso!";
+        JOptionPane.showMessageDialog(this, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_limparTabelasBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,5 +220,6 @@ public class PainelBoasVindas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton limparTabelasBTN;
     // End of variables declaration//GEN-END:variables
 }
