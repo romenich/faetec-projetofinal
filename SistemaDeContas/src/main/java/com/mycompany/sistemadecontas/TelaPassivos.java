@@ -96,14 +96,14 @@ public class TelaPassivos extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
         jLabel1.setText("Adicione as contas de Passivo da empresa");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jLabel1.setMaximumSize(new java.awt.Dimension(359, 30));
         jLabel1.setMinimumSize(new java.awt.Dimension(359, 30));
         jLabel1.setPreferredSize(new java.awt.Dimension(359, 30));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 15, 435, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 15, 460, -1));
 
         tabelaPassivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tabelaPassivos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
