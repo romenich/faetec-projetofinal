@@ -2,6 +2,7 @@ package com.mycompany.sistemadecontas;
 import com.mycompany.sistemadecontas.TelaAtivos;
 import com.mycompany.sistemadecontas.TelaPassivos;
 
+
 /**
  *
  * @author romenik
@@ -103,6 +104,11 @@ public class PainelBoasVindas extends javax.swing.JFrame {
 
         limparTabelasBTN.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         limparTabelasBTN.setText("Limpar dados salvos");
+        limparTabelasBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparTabelasBTNActionPerformed(evt);
+            }
+        });
         getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 510, -1, -1));
 
         pack();
@@ -147,6 +153,10 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         newFrame.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void limparTabelasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparTabelasBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_limparTabelasBTNActionPerformed
 
     /**
      * @param args the command line arguments
