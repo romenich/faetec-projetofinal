@@ -31,7 +31,6 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
         botaoRelatorio = new javax.swing.JButton();
-        limparTabelasBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1093, 614));
@@ -102,15 +101,6 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         });
         getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, 50));
 
-        limparTabelasBTN.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        limparTabelasBTN.setText("Limpar dados salvos");
-        limparTabelasBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limparTabelasBTNActionPerformed(evt);
-            }
-        });
-        getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 510, -1, -1));
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -154,10 +144,6 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void limparTabelasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparTabelasBTNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_limparTabelasBTNActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -200,6 +186,5 @@ public class PainelBoasVindas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton limparTabelasBTN;
     // End of variables declaration//GEN-END:variables
 }
