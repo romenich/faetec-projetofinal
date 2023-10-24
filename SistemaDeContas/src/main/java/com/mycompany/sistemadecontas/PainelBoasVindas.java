@@ -60,16 +60,16 @@ public class PainelBoasVindas extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setFont(new java.awt.Font("Noto Sans", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 204));
-        jLabel3.setText("Inserção dos Ativos e Passivos");
+        jLabel3.setText("  Inserção dos Ativos e Passivos");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(133, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(104, 104, 104))
         );
