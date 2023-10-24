@@ -81,7 +81,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 730, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 730, -1));
 
         botaoVoltar.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
         botaoVoltar.setText("Voltar");
