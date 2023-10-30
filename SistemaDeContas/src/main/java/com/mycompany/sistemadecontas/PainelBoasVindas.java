@@ -117,7 +117,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 limparTabelasBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 510, -1, -1));
+        getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 510, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
