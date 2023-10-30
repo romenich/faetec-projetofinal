@@ -171,6 +171,7 @@ public class TelaPassivos extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, gridBagConstraints);
 
         botaoSalvarContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoSalvarContas.setForeground(new java.awt.Color(0, 255, 204));
         botaoSalvarContas.setText("Salvar Contas");
         botaoSalvarContas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +187,7 @@ public class TelaPassivos extends javax.swing.JFrame {
         getContentPane().add(botaoSalvarContas, gridBagConstraints);
 
         botaoMaisContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoMaisContas.setForeground(new java.awt.Color(0, 255, 204));
         botaoMaisContas.setText("Adicionar Mais Contas");
         botaoMaisContas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +203,7 @@ public class TelaPassivos extends javax.swing.JFrame {
         getContentPane().add(botaoMaisContas, gridBagConstraints);
 
         botaoVoltar.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        botaoVoltar.setForeground(new java.awt.Color(0, 255, 204));
         botaoVoltar.setText("Voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

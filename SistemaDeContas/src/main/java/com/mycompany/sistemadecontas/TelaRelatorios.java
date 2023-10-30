@@ -66,6 +66,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         getContentPane().add(relatoriosLABEL, gridBagConstraints);
 
         botaoVoltar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        botaoVoltar.setForeground(new java.awt.Color(0, 255, 204));
         botaoVoltar.setText("Voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

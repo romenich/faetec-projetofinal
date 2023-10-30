@@ -115,6 +115,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         getContentPane().add(jPanel1, gridBagConstraints);
 
         botaoVoltar.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        botaoVoltar.setForeground(new java.awt.Color(0, 255, 204));
         botaoVoltar.setText("Voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,6 +147,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         getContentPane().add(botaoRelatorio, gridBagConstraints);
 
         limparTabelasBTN.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        limparTabelasBTN.setForeground(new java.awt.Color(0, 255, 204));
         limparTabelasBTN.setText("Apagar dados salvos");
         limparTabelasBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
