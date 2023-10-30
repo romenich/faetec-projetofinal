@@ -128,7 +128,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         PaginaPrincipal newFrame = new PaginaPrincipal();
         newFrame.setVisible(true);
         dispose();
-        
+
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -152,8 +152,6 @@ public class PainelBoasVindas extends javax.swing.JFrame {
 
         //definindo o ícone
         //botaoRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/relatorios.png")));
-
-        
         // Atualizar a tela de relatórios com os valores calculados
         TelaRelatorios newFrame = new TelaRelatorios(totalAtivos, totalPassivos, patrimonioLiquido);
         newFrame.setVisible(true);
@@ -169,9 +167,9 @@ public class PainelBoasVindas extends javax.swing.JFrame {
 
     private void limparTabelasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparTabelasBTNActionPerformed
         // TODO add your handling code here:
-        // Especifique o caminho dos arquivos dos bancos de dados a serem apagados
-        String caminhoContaAtivoDB = "C:\\Users\\FAETEC-PÁDUA\\faetec-projetofinal\\SistemaDeContas\\contaativo.db";
-        String caminhoContaPassivoDB = "C:\\Users\\FAETEC-PÁDUA\\faetec-projetofinal\\SistemaDeContas\\contapassivo.db";
+        // Especificando o caminho dos arquivos dos bancos de dados a serem apagados
+        String caminhoContaAtivoDB = "contaativo.db";
+        String caminhoContaPassivoDB = "contapassivo.db";
 
         // Apagar o banco de dados contaativo.db
         File arquivoContaAtivoDB = new File(caminhoContaAtivoDB);
@@ -185,8 +183,13 @@ public class PainelBoasVindas extends javax.swing.JFrame {
             arquivoContaPassivoDB.delete();
         }
 
-        String mensagem = "As contas da tabela foram apagadas com sucesso!";
-        JOptionPane.showMessageDialog(this, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);
+   
+
+    String mensagem = "As contas da tabela foram apagadas com sucesso!";
+
+    JOptionPane.showMessageDialog (this, mensagem,
+            
+"Sobre", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_limparTabelasBTNActionPerformed
 
     /**
@@ -203,16 +206,28 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PainelBoasVindas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PainelBoasVindas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PainelBoasVindas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PainelBoasVindas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelBoasVindas.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PainelBoasVindas.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PainelBoasVindas.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PainelBoasVindas.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

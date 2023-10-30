@@ -19,6 +19,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
      */
     public TelaRelatorios(double totalAtivos, double totalPassivos, double patrimonioLiquido) {
         initComponents();
+        botaoVoltar.setToolTipText("Clique para voltar a tela anterior.");
         totalAtivosLabel.setText("Total de Ativos: "+totalAtivos);
         totalPassivosLabel.setText("Total de Passivos: "+totalPassivos);
         patrimonioLiquidoLabel.setText("Patrimônio Líquido: " + patrimonioLiquido);

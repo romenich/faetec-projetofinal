@@ -18,6 +18,11 @@ public class PaginaPrincipal extends javax.swing.JFrame {
      */
     public PaginaPrincipal() {
         initComponents();
+        nomeUsuario.setToolTipText("Nome de usuário.");
+        senhaUsuario.setToolTipText("Senha do usuário.");
+        botaoEntrar.setToolTipText("Clique para entrar.");
+        cadastroBOTAO.setToolTipText("Clique para cadastrar, se ainda não possuir uma conta.");
+        botaoLimpar.setToolTipText("Clique para limpar os campos.");
         criarTabelaContaAcesso();
     }
 

@@ -20,6 +20,9 @@ public class TelaPassivos extends javax.swing.JFrame {
      */
     public TelaPassivos() {
         initComponents();
+        botaoMaisContas.setToolTipText("Clique para adicionar mais contas.");
+        botaoSalvarContas.setToolTipText("Clique para salvar as contas inseridas na tabela.");
+        botaoVoltar.setToolTipText("Clique para voltar a tela anterior.");
         // Inicialização do modelo da tabela
         tableModel = (DefaultTableModel) tabelaPassivos.getModel();
 
