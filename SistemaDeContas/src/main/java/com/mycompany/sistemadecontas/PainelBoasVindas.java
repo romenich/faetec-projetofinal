@@ -16,6 +16,11 @@ public class PainelBoasVindas extends javax.swing.JFrame {
      */
     public PainelBoasVindas() {
         initComponents();
+        botaoVoltar.setToolTipText("Clique aqui para voltar a tela anterior.");
+        botaoRelatorio.setToolTipText("Clique aqui para gerar os relatórios da empresa");
+        limparTabelasBTN.setToolTipText("Atenção: ao clicar nesse botão você apagará todas as contas salvas.");
+        jLabel1.setToolTipText("Clique para inserir as contas de ativo.");
+        jLabel2.setToolTipText("Clique para inserir as contas de passivo.");
     }
 
     /**
@@ -123,6 +128,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         PaginaPrincipal newFrame = new PaginaPrincipal();
         newFrame.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
