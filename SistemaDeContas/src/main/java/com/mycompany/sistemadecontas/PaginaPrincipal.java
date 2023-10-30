@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 import java.sql.*;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
 
-
 /**
  *
  * @author romenik
@@ -20,8 +19,8 @@ public class PaginaPrincipal extends javax.swing.JFrame {
      */
     public PaginaPrincipal() {
         initComponents();
-        nomeUsuario.setToolTipText("Nome de usuário.");
-        senhaUsuario.setToolTipText("Senha do usuário.");
+        nomeUsuario.setToolTipText("Digite o nome de usuário.");
+        senhaUsuario.setToolTipText("Digite a senha do usuário.");
         botaoEntrar.setToolTipText("Clique para entrar.");
         cadastroBOTAO.setToolTipText("Clique para cadastrar, se ainda não possuir uma conta.");
         botaoLimpar.setToolTipText("Clique para limpar os campos.");
@@ -36,11 +35,14 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 + "    senhaAcesso TEXT NOT NULL\n"
                 + ");";
 
-        try (Connection conn = DriverManager.getConnection(url);
-                Statement stmt = conn.createStatement()) {
+        try {
+            Class.forName("org.sqlite.JDBC");
+            Connection conn = DriverManager.getConnection(url);
+            Statement stmt = conn.createStatement();
             // Criando a tabela caso não exista
             stmt.execute(sql);
-        } catch (SQLException e) {
+            conn.close();
+        } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -53,6 +55,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         senhaUsuario = new javax.swing.JLabel();
         nomeUsuario = new javax.swing.JLabel();
@@ -69,29 +72,56 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 153));
         setForeground(java.awt.Color.cyan);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         senhaUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         senhaUsuario.setText("Senha:");
-        getContentPane().add(senhaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(15, 279, 0, 0);
+        getContentPane().add(senhaUsuario, gridBagConstraints);
 
         nomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         nomeUsuario.setText("Usuário: ");
-        getContentPane().add(nomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(60, 279, 0, 0);
+        getContentPane().add(nomeUsuario, gridBagConstraints);
 
         campoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(campoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 190, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 126;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(60, 8, 0, 0);
+        getContentPane().add(campoUsuario, gridBagConstraints);
 
         campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(campoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 190, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 126;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(15, 8, 0, 0);
+        getContentPane().add(campoSenha, gridBagConstraints);
 
         botaoEntrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoEntrar.setText("Entrar");
@@ -100,7 +130,13 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(75, 152, 0, 0);
+        getContentPane().add(botaoEntrar, gridBagConstraints);
 
         painelSoftware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
@@ -125,7 +161,14 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
         );
 
-        getContentPane().add(painelSoftware, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 810, 130));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipady = 36;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 19, 0, 0);
+        getContentPane().add(painelSoftware, gridBagConstraints);
 
         botaoLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoLimpar.setText("Limpar ");
@@ -134,7 +177,13 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoLimparActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 500, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(128, 223, 5, 2);
+        getContentPane().add(botaoLimpar, gridBagConstraints);
 
         botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         botaoSobre.setText("Sobre");
@@ -143,7 +192,12 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 botaoSobreActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(128, 0, 5, 0);
+        getContentPane().add(botaoSobre, gridBagConstraints);
 
         cadastroBOTAO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cadastroBOTAO.setText("Cadastrar");
@@ -152,7 +206,13 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 cadastroBOTAOActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastroBOTAO, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(75, 239, 0, 0);
+        getContentPane().add(cadastroBOTAO, gridBagConstraints);
 
         pack();
         setLocationRelativeTo(null);

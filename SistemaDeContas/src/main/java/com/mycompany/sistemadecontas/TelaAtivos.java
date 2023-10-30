@@ -89,6 +89,7 @@ public class TelaAtivos extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         botaoVoltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -102,7 +103,7 @@ public class TelaAtivos extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1093, 614));
         setPreferredSize(new java.awt.Dimension(1093, 614));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         botaoVoltar.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoVoltar.setText("Voltar");
@@ -111,7 +112,12 @@ public class TelaAtivos extends javax.swing.JFrame {
                 botaoVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(48, 0, 0, 0);
+        getContentPane().add(botaoVoltar, gridBagConstraints);
 
         tabelaAtivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tabelaAtivos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -153,14 +159,30 @@ public class TelaAtivos extends javax.swing.JFrame {
         tabelaAtivos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabelaAtivos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 900, 350));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 884;
+        gridBagConstraints.ipady = 330;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(20, 60, 0, 40);
+        getContentPane().add(jScrollPane1, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Adicione as contas de Ativo da empresa");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 135, 0, 0);
+        getContentPane().add(jLabel1, gridBagConstraints);
 
         botaoSalvarContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoSalvarContas.setText("Salvar Contas");
@@ -169,7 +191,13 @@ public class TelaAtivos extends javax.swing.JFrame {
                 botaoSalvarContasActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoSalvarContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(40, 60, 0, 0);
+        getContentPane().add(botaoSalvarContas, gridBagConstraints);
 
         botaoMaisContas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         botaoMaisContas.setText("Adicionar Mais Contas");
@@ -178,7 +206,12 @@ public class TelaAtivos extends javax.swing.JFrame {
                 botaoMaisContasActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoMaisContas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(40, 1, 0, 0);
+        getContentPane().add(botaoMaisContas, gridBagConstraints);
 
         pack();
         setLocationRelativeTo(null);
