@@ -75,7 +75,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         senhaUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        senhaUsuario.setForeground(new java.awt.Color(0, 255, 204));
+        senhaUsuario.setForeground(java.awt.Color.blue);
         senhaUsuario.setText("Senha:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -85,7 +85,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(senhaUsuario, gridBagConstraints);
 
         nomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        nomeUsuario.setForeground(new java.awt.Color(0, 255, 204));
+        nomeUsuario.setForeground(java.awt.Color.blue);
         nomeUsuario.setText("Usuário: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -126,7 +126,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(campoSenha, gridBagConstraints);
 
         botaoEntrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoEntrar.setForeground(new java.awt.Color(0, 255, 204));
+        botaoEntrar.setForeground(java.awt.Color.blue);
         botaoEntrar.setText("Entrar");
         botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +153,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             painelSoftwareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelSoftwareLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 688, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(64, 64, 64))
         );
         painelSoftwareLayout.setVerticalGroup(
@@ -174,7 +174,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(painelSoftware, gridBagConstraints);
 
         botaoLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoLimpar.setForeground(new java.awt.Color(0, 255, 204));
+        botaoLimpar.setForeground(java.awt.Color.blue);
         botaoLimpar.setText("Limpar ");
         botaoLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,7 +190,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(botaoLimpar, gridBagConstraints);
 
         botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoSobre.setForeground(new java.awt.Color(0, 255, 204));
+        botaoSobre.setForeground(java.awt.Color.blue);
         botaoSobre.setText("Sobre");
         botaoSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +205,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(botaoSobre, gridBagConstraints);
 
         cadastroBOTAO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        cadastroBOTAO.setForeground(new java.awt.Color(0, 255, 204));
+        cadastroBOTAO.setForeground(java.awt.Color.blue);
         cadastroBOTAO.setText("Cadastrar");
         cadastroBOTAO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

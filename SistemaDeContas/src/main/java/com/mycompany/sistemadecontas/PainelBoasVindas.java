@@ -51,7 +51,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel1.setText("Inserir contas do Ativo");
+        jLabel1.setText("Inserir contas do Ativo (+)");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -67,7 +67,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel2.setText("Inserir contas do Passivo");
+        jLabel2.setText("Inserir contas do Passivo (-)");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -111,7 +111,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 60;
         gridBagConstraints.ipady = 84;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 85, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 8, 0, 0);
         getContentPane().add(jPanel1, gridBagConstraints);
 
         botaoVoltar.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
@@ -125,6 +125,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(90, 0, 12, 0);
         getContentPane().add(botaoVoltar, gridBagConstraints);
@@ -159,7 +160,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(90, 122, 12, 0);
+        gridBagConstraints.insets = new java.awt.Insets(90, 122, 0, 0);
         getContentPane().add(limparTabelasBTN, gridBagConstraints);
 
         pack();

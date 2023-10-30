@@ -62,7 +62,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 107;
         gridBagConstraints.ipady = -7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 295, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(32, 277, 0, 0);
         getContentPane().add(relatoriosLABEL, gridBagConstraints);
 
         botaoVoltar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -76,11 +76,10 @@ public class TelaRelatorios extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 18;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(100, 0, 2, 0);
+        gridBagConstraints.insets = new java.awt.Insets(100, 21, 35, 0);
         getContentPane().add(botaoVoltar, gridBagConstraints);
-
-        totalAtivosLabel.setText("jLabel1");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -88,10 +87,8 @@ public class TelaRelatorios extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 838;
         gridBagConstraints.ipady = 61;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(60, 60, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(60, 81, 0, 0);
         getContentPane().add(totalAtivosLabel, gridBagConstraints);
-
-        totalPassivosLabel.setText("jLabel2");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -99,10 +96,8 @@ public class TelaRelatorios extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 848;
         gridBagConstraints.ipady = 61;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 60, 0, 50);
+        gridBagConstraints.insets = new java.awt.Insets(30, 81, 0, 71);
         getContentPane().add(totalPassivosLabel, gridBagConstraints);
-
-        patrimonioLiquidoLabel.setText("jLabel1");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -110,7 +105,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 818;
         gridBagConstraints.ipady = 71;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 60, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(40, 81, 0, 0);
         getContentPane().add(patrimonioLiquidoLabel, gridBagConstraints);
 
         pack();
