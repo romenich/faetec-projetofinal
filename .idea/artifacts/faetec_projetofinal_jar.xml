@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="faetec-projetofinal:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/faetec_projetofinal_jar</output-path>
+    <root id="archive" name="faetec-projetofinal.jar">
+      <element id="module-output" name="faetec-projetofinal" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/classes/artifacts/SistemaDeContas_jar/SistemaDeContas.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SistemaDeContas/lib/unknown/binary/AbsoluteLayout/SNAPSHOT/AbsoluteLayout-SNAPSHOT.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SistemaDeContas/lib/unknown/binary/AbsoluteLayout/SNAPSHOT/sqlite-jdbc-3.43.0.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

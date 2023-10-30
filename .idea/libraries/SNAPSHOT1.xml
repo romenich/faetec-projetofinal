@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="SNAPSHOT1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SistemaDeContas/lib/unknown/binary/AbsoluteLayout/SNAPSHOT/AbsoluteLayout-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SistemaDeContas/lib/unknown/binary/AbsoluteLayout/SNAPSHOT/sqlite-jdbc-3.43.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

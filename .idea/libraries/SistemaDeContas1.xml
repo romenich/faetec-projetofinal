@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SistemaDeContas1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/classes/artifacts/SistemaDeContas_jar/SistemaDeContas.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
