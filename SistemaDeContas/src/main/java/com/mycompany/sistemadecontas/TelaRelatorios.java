@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package com.mycompany.sistemadecontas;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
+
 
 /**
  *

@@ -6,6 +6,8 @@ package com.mycompany.sistemadecontas;
 
 import javax.swing.JOptionPane;
 import java.sql.*;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
+
 
 /**
  *

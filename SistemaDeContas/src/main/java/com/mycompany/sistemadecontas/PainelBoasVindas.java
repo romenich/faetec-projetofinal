@@ -4,6 +4,8 @@ import com.mycompany.sistemadecontas.TelaAtivos;
 import com.mycompany.sistemadecontas.TelaPassivos;
 import java.io.File;
 import javax.swing.JOptionPane;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
+
 
 /**
  *
