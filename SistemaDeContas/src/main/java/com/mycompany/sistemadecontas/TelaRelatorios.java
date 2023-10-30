@@ -37,7 +37,6 @@ public class TelaRelatorios extends javax.swing.JFrame {
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         relatoriosLABEL = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
@@ -51,19 +50,12 @@ public class TelaRelatorios extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(940, 551));
         setPreferredSize(new java.awt.Dimension(1093, 614));
         setResizable(false);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         relatoriosLABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         relatoriosLABEL.setText("               Relatórios:");
         relatoriosLABEL.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.MatteBorder(null), new javax.swing.border.MatteBorder(null)));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 107;
-        gridBagConstraints.ipady = -7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 239, 0, 0);
-        getContentPane().add(relatoriosLABEL, gridBagConstraints);
+        getContentPane().add(relatoriosLABEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 27, 340, 25));
 
         botaoVoltar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         botaoVoltar.setForeground(new java.awt.Color(0, 255, 204));
@@ -73,40 +65,16 @@ public class TelaRelatorios extends javax.swing.JFrame {
                 botaoVoltarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 38;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(100, 21, 35, 0);
-        getContentPane().add(botaoVoltar, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 838;
-        gridBagConstraints.ipady = 61;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(62, 81, 0, 0);
-        getContentPane().add(totalAtivosLabel, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 848;
-        gridBagConstraints.ipady = 61;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 81, 0, 71);
-        getContentPane().add(totalPassivosLabel, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 818;
-        gridBagConstraints.ipady = 71;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 81, 0, 0);
-        getContentPane().add(patrimonioLiquidoLabel, gridBagConstraints);
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 483, 120, -1));
+
+        totalAtivosLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(totalAtivosLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 114, 840, 63));
+
+        totalPassivosLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(totalPassivosLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 207, 840, 63));
+
+        patrimonioLiquidoLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(patrimonioLiquidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 840, 60));
 
         pack();
         setLocationRelativeTo(null);
