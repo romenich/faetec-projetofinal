@@ -112,7 +112,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             painelSoftwareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelSoftwareLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 688, Short.MAX_VALUE)
                 .addGap(64, 64, 64))
         );
         painelSoftwareLayout.setVerticalGroup(
