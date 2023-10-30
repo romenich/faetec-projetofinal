@@ -96,13 +96,14 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
         botaoRelatorio.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        botaoRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/relatorios.png"))); // NOI18N
         botaoRelatorio.setText("Gerar Relatórios");
         botaoRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoRelatorioActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, 50));
+        getContentPane().add(botaoRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, 80));
 
         limparTabelasBTN.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         limparTabelasBTN.setText("Apagar dados salvos");
@@ -111,7 +112,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
                 limparTabelasBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 510, -1, -1));
+        getContentPane().add(limparTabelasBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 510, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -143,6 +144,10 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         // calculo do patrimonio liquido
         double patrimonioLiquido = totalAtivos - totalPassivos;
 
+        //definindo o ícone
+        //botaoRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/relatorios.png")));
+
+        
         // Atualizar a tela de relatórios com os valores calculados
         TelaRelatorios newFrame = new TelaRelatorios(totalAtivos, totalPassivos, patrimonioLiquido);
         newFrame.setVisible(true);
