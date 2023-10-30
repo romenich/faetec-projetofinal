@@ -55,14 +55,14 @@ public class TelaRelatorios extends javax.swing.JFrame {
 
         relatoriosLABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         relatoriosLABEL.setText("               Relatórios:");
-        relatoriosLABEL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        relatoriosLABEL.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.MatteBorder(null), new javax.swing.border.MatteBorder(null)));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 107;
         gridBagConstraints.ipady = -7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 277, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(30, 239, 0, 0);
         getContentPane().add(relatoriosLABEL, gridBagConstraints);
 
         botaoVoltar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -76,7 +76,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 18;
+        gridBagConstraints.ipadx = 38;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(100, 21, 35, 0);
         getContentPane().add(botaoVoltar, gridBagConstraints);
@@ -87,7 +87,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 838;
         gridBagConstraints.ipady = 61;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(60, 81, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(62, 81, 0, 0);
         getContentPane().add(totalAtivosLabel, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
