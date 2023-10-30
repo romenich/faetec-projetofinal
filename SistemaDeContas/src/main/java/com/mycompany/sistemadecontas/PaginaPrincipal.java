@@ -186,6 +186,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         getContentPane().add(botaoLimpar, gridBagConstraints);
 
         botaoSobre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        botaoSobre.setForeground(new java.awt.Color(255, 255, 51));
         botaoSobre.setText("Sobre");
         botaoSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
