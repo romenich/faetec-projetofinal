@@ -24,6 +24,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         botaoEntrar.setToolTipText("Clique para entrar.");
         cadastroBOTAO.setToolTipText("Clique para cadastrar, se ainda não possuir uma conta.");
         botaoLimpar.setToolTipText("Clique para limpar os campos.");
+        botaoEntrar.setDefaultCapable(true);
         criarTabelaContaAcesso();
     }
     
