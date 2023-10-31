@@ -44,6 +44,7 @@ public class PainelBoasVindas extends javax.swing.JFrame {
         limparTabelasBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inserção dos Ativos e Passivos");
         setMaximumSize(new java.awt.Dimension(1093, 614));
         setPreferredSize(new java.awt.Dimension(1093, 614));
         setResizable(false);

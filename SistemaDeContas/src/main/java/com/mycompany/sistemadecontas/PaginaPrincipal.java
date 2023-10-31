@@ -26,7 +26,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         botaoLimpar.setToolTipText("Clique para limpar os campos.");
         criarTabelaContaAcesso();
     }
-
+    
     private void criarTabelaContaAcesso() {
         String url = "jdbc:sqlite:contaacesso.db";
         String sql = "CREATE TABLE IF NOT EXISTS contaAcesso (\n"
@@ -69,7 +69,9 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         cadastroBOTAO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Contas");
         setBackground(new java.awt.Color(255, 255, 153));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setForeground(java.awt.Color.cyan);
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
