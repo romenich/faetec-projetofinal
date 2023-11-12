@@ -6,8 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.sql.*;
 import javax.swing.JOptionPane;
-import org.netbeans.lib.awtextra.AbsoluteLayout;
-
+import java.io.File;
 
 /**
  *
@@ -231,7 +230,8 @@ public class TelaPassivos extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoSalvarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarContasActionPerformed
-        String url = "jdbc:sqlite:contapassivo.db";
+        String homeDir = System.getProperty("user.home");
+        String url = "jdbc:sqlite:" + homeDir + File.separator + "Documentos" + File.separator + "contaacesso.db";
 
         for (int i = 0; i < tableModel.getRowCount(); i++) {
             String nomeConta = (String) tableModel.getValueAt(i, 0);

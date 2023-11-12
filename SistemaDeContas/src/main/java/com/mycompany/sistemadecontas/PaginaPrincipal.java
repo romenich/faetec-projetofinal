@@ -4,9 +4,10 @@
  */
 package com.mycompany.sistemadecontas;
 
+import java.io.File;
 import javax.swing.JOptionPane;
 import java.sql.*;
-import org.netbeans.lib.awtextra.AbsoluteLayout;
+
 
 /**
  *
@@ -27,9 +28,10 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         botaoEntrar.setDefaultCapable(true);
         criarTabelaContaAcesso();
     }
-    
+
     private void criarTabelaContaAcesso() {
-        String url = "jdbc:sqlite:contaacesso.db";
+        String homeDir = System.getProperty("user.home");
+        String url = "jdbc:sqlite:" + homeDir + File.separator + "Documentos" + File.separator + "contaacesso.db";
         String sql = "CREATE TABLE IF NOT EXISTS contaAcesso (\n"
                 + "    idAcesso INTEGER PRIMARY KEY AUTOINCREMENT,\n"
                 + "    usuarioAcesso TEXT NOT NULL,\n"
